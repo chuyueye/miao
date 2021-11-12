@@ -8,7 +8,6 @@
       body >:first-child{
         color: red;
       }
-   
     .a[tabindex="1"]:focus {
       color:blue;
     }
@@ -18,11 +17,42 @@
     .a[tabindex="1"]:active {
       color:green;
     }
-    .a.c span{color: red;}
+    .a.c span {color: red;}
     p.a.c span :first-child{color: green;}
     p.a.c span :last-child{color: blue;}
-    a:visited{color: orange;};
-    a:link {color: pink;};
+    a:visited{color: orange;}
+
+    a:link {color: pink;}
+    a[href^="mailto:" i]{
+      color: blue;
+    }
+    a[href^="tel:" i]{color: yellow;}
+
+    
+    </style>
+    <style type="text/css">
+      div.a li:nth-child(4),
+      div.a li:nth-child(5),
+      div.a li:nth-child(6),
+      div.a li:nth-child(7){
+        color: red;
+      }
+
+      div.b ul li:nth-child(-n+25){
+      color: red;
+    }
+      div.b li:nth-child(n+65){
+        color: green;
+      }
+      div.b li:nth-child(n+35):nth-child(-n+50){
+        color: blue;
+      }
+      div.prime ul li:nth-child(2n+4)
+      ,div.prime ul li:nth-child(3n+6)
+      ,div.prime ul li:nth-child(5n+10)
+      ,div.prime ul li:nth-child(7n+14){
+        color: coral;
+      }
     </style>
   </head>
 
