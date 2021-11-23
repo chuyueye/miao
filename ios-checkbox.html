@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		div {
+			xmargin: 20px;
+			width: 20%;
+			xdisplay: grid;
+		}
+		div.yi {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		input.yi {
+			position: relative;
+			width: 80px;
+			height: 40px;
+			appearance: none;
+			background-color: #c6c6c6;
+			outline: none;
+			border-radius: 20px;
+			box-shadow: inset 0 0 5px rgba(0, 0, 0, .2),
+						0 0 2px rgba(0, 0, 0, .2);
+			transition: .5s;
+		}
+		input.yi:checked {
+			background: green ;
+		}
+		input.yi:before {
+			content: "";
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			left: 0;
+			border-radius: 20px;
+			background: white;
+			box-shadow:  0 2px 5px rgba(0, 0, 0, .2);
+			transition: .5s;
+			transform: scale(1.09);
+		}
+		input:checked.yi:before {
+			left: 40px;
+		}
+		input
+	</style>
+</head>
+<body>
+	<div class="yi">
+		<input class="yi" type="checkbox" name="">
+	</div>
+	<!-- <div class="er">
+		<input type="checkbox" name="" id="iosc">
+		<label for="iosc"></label>
+	</div> -->
+</body>
+</html>

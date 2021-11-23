@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>heart</title>
+	<style type="text/css">
+		div.heart {
+			background-image: url(img/web_heart_animation.png);
+			width: 100px;
+   		    height: 100px;
+   		    display: inline-block;	    
+		}
+		div.heart:hover {
+			background-position: -2800px 0px;
+			transition: 2.5s steps(28);
+		}
+		xdiv.heart:active {
+			background-position: -2800px 0px;
+			transition: 1.1s steps(28);
+		}
+		div.imgt {
+			display: inline-block;
+			border: solid;
+			height: 100px;
+			width: 100px;
+			margin: auto;
+			overflow: hidden;
+		}
+		img.transition {
+			position: relative;
+			left: 0px;
+			xpadding: 0px 0px 0px 2800px ;
+			transition: 2s steps(28) 5s;
+		}
+		img.transition:hover {
+			left: -2800px;
+			transition: 2s steps(28);
+		}
+	</style>
+</head>
+<body>
+<section>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+</section>
+<section>
+	<img src="img/web_heart_animation.png">
+
+	<div class="imgt">
+	<img class="transition" src="img/web_heart_animation.png">
+	</div>
+	<div class="imgt">
+	<img class="transition" src="img/web_heart_animation.png">
+	</div>
+	<div class="imgt">
+	<img class="transition" src="img/web_heart_animation.png">
+	</div>
+	<div class="imgt">
+	<img class="transition" src="img/web_heart_animation.png">
+	</div>
+		<div class="imgt">
+	<img class="transition" src="img/web_heart_animation.png">
+	</div>
+		<div class="imgt">
+	<img class="transition" src="img/web_heart_animation.png">
+	</div>
+</section>
+</body>
+</html>
