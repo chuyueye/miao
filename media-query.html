@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2021 by anonymous (http://jsbin.com/hixinufeji/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>media</title>
+<style id="jsbin-css">
+* {
+  xbackground-color: rgba(0,0,0,0.08);
+  xbox-shadow: inset 0 0 1px red;
+}
+
+html {
+  xzoom:2
+}
+
+div {
+  background-color: purple;
+  height:400px;
+}
+
+@media  (max-width: 400px)   {
+  div {background-color: red;}
+  
+}
+@media  (min-width: 400px) and (max-width:
+600px)   {
+  div {background-color: green;}
+}
+
+@media  (min-width: 600px) and (max-width:
+800px)   {
+  div {background-color: blue;}
+}
+@media  (min-width: 800px) and (max-width:
+1000px)   {
+  div {background-color: yellow;}
+}
+</style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
