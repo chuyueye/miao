@@ -1,0 +1,149 @@
+https://fvs.io/redirector?
+
+token=ZkpDUzJVdXdiUHBOV3VWSzN0SkNjWlkwSXNZU0JFQkJVcExaV09NMG52YzZTdXB0N0VCVjJBbGpobjFFM2JjUi9lK3R6YTJDVUxrb1dDbkF0di9ZMys0ME83OEJHZTB5clhJTi9KUzdrQ2ZsQ1RlSmZlbmhEYm42cnRBcGlKN2pFcHVqN3Z4ZDlrcGtvbG1Denc3NkdSeHZiRDR4UzlMcWtRPT06bXJwcWZnYkozdCt4QkRRZEFNckRVZz09
+
+图片，css，js三种方法禁止选中、复制。
+document.body.style.cssText = 'user-select: text'
+document.body.style.cssText = '-webkit-user-select: text'
+a=document.getElementsByClassName("fullimg")
+while (a[0] !=undefined) { a[0].remove() }
+a[0].remove()
+
+let styleElement=document.createElement('style')
+let q=styleElement.appendChild(document.createTextNode('*{-webkit-user-select: text}'));
+document.getElementsByTagName('head')[0].appendChild(q)
+
+function addNewStyle(newStyle) {
+    var styleElement = document.getElementById('styles_js');
+    if (!styleElement) {
+    styleElement = document.createElement('style');
+    styleElement.type = 'text/css';
+    styleElement.id = 'styles_js';
+    document.getElementsByTagName('head')[0].appendChild(styleElement);
+    }
+    styleElement.appendChild(document.createTextNode(newStyle));
+}
+addNewStyle('*{-webkit-user-select: text}');
+
+document.body.innerText
+除去 /n 
+javascript:(function() { function R(a){ona = "on"+a; if(window.addEventListener) window.addEventListener(a, function (e) { for(var n=e.originalTarget; n; n=n.parentNode) n[ona]=null; }, true); window[ona]=null; document[ona]=null; if(document.body) document.body[ona]=null; } R("contextmenu"); R("click"); R("mousedown"); R("mouseup"); R("selectstart");})()
+
+javascript:       (function(){eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('5 2=8;5 3=2.K;3.7=3.k=3.e=3.9=3.6=3.y=3.7=3.z=2.7=2.k=2.e=2.9=2.6=4;2.7=2.6=2.c=2.9=p(){r t};g(8.n||8){d=4;c=4;6=4}5 a=8.15(\'*\');o(5 i=a.q-1;i>=0;i--){5 b=a;g(b.n||b){d=4;c=4}}s(h(\'%u%v%w%x%j%A%B%C%j%D\')+\'\\E\');3.m.13=\'14!f\';3.m.16=\'12!f\';',62,70,'||doc|bd|null|var|oncontextmenu|onselectstart|document|onkeydown|arAllElements|elmOne|onmousedown|onmouseup|onpaste|important|with|unescape||u5236|oncopy|u7528|style|wrappedJSObject|for|function|length|return|alert|true|u5DF2|u89E3|u9664|u590D|onmousemove|ondragstart|u53F3|u952E|u9650|uFF01|u000d|u66F4|u591A|u7CBE|u5F69|u5B9E|body|u5E94|uFF0C|u8BF7|u5173|u6CE8|u300E|u5F02|u6B21|u5143|u8F6F|u4EF6|u4E16|u754C|u300F|u000d | | |text|webkitUserSelect|auto|getElementsByTagName|MozUserSelect|u4E0E'.split('|'),0,{}))})()
+
+ls2171175
+146824
+Hello123World
+
+
+Require version = 
+5.4.143-1-ecc7515846d9a85938da6124aee98749,
+installed 
+5.4.143-1-37451160d0bf11af2a1bfcadee734ace
+
+
+af9d078c-e24d-44ca-8827-210f0bb023e3
+gangy7329@163.com
+
+http://downloads.openwrt.org/releases/17.01.5/targets/ar71xx/generic/
+openwrt-17.01.5-ar71xx-generic-tl-wr720n-v3-squashfs-factory.bin
+
+https://downloads.openwrt.org/releases/17.01.5/targets/ar71xx/generic/
+lede-17.01.5-ar71xx-generic-tl-wr720n-v3-squashfs-factory.bin
+
+https://downloads.openwrt.org/releases/17.01.5/targets/ar71xx/generic/
+
+IP地址: 104.20.187.129泛播 Cloudflare
+IP地址: 23.19.73.211美国加利福尼亚洛杉矶
+IP地址: 95.211.196.28荷兰
+8月9日，缘子
+
+12498
+http://192.168.31.1/cgi-bin/luci/;stok=18fb9a6f6b713ea095e8115b69a28415/api/xqnetwork/set_wifi_ap?ssid=whatever&encryption=NONE&enctype=NONE&channel=1%3B%2Fusr%2Fsbin%2Ftelnetd
+5f84286961068fecdbe5cd045cf1f2c7
+http://192.168.31.1/cgi-bin/luci/;stok=18fb9a6f6b713ea095e8115b69a28415/web/init/guide#privacy=1
+18fb9a6f6b713ea095e8115b69a28415
+0510bfddc303f113f8bfd3ca021a8027
+e576aa2f4937fbabd6d11e7c88c3ccb5
+
+http://192.168.31.1/cgi-bin/luci/;stok=5f84286961068fecdbe5cd045cf1f2c7/api/xqsystem/set_name_password?oldPwd=11111111&newPwd=11111111
+breed
+# cd /tmp; wget https://breed.hackpascal.net/breed-mt7620-xiaomi-mini.bin
+
+# cd /tmp; http://downloads.openwrt.org/releases/21.02.0/targets/ramips/mt7620/openwrt-21.02.0-ramips-mt7620-xiaomi_miwifi-mini-squashfs-sysupgrade.bin
+方大特钢，重庆百货，四方股份，千金药业
+唐山港，锦和商业，中国神华
+
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABDCAMAAAASyFM4AAACc1BMVEUAAAAWGij/+/YXHCkdICr/+/MTGSsACwv///3/+/IXGykWHSwWHi3///0yOUUXHSj/+/L//PL//PMmLDn//+D///r///0yOkQnLTonKjf8/O7/+/L++vHZ2df++vFobHE4Pkv//PT///////3+/fr++vL/+/L++vD/+/Lq6ur/+/L//PL//PI6QEr/+/H/+fD///7///j//PP//PLm5+f/+/L6+fb//PP/+/Lq6+vq6ur/+/PU1NP++/LJycf/+/E0OUQ3PUb/9+///vX///3/+/L//PPp6er///729fLo6On//PPv7u3f3t3p6uf/+/Lj4+H/+/HMy8v/+/K9vbv/+/KSlZb//PH/+/L//PL//PL////r6+v29vL5+PX49vL09PLw8Oz//PLc29rq6ufn5+P//PPPz8//+vH38+p7foHd3db//PVZWV////D///rn5+Xq6urd2try7OXk4Nqrq6vY09O3t7doaHD/9u3/+/L//PT//fX//ff+/PX9+/PUuHfWu3z9+vLVuXn//fn//vv9+vH8+Oz27Njs3r38+fH48N78+O/79unz6M/l06jk0KT///3+/Pj+/fbt37/awYfWunv58+Tu4cLm1KrTtnPy5svhzZ3///vq2bXTt3Xv4sTr3Lrn1q748eDu4MDjz6LPsGj169X06tTQsmv69Obr27jizp7ZwIT9+e/79uv79ef58eH37tr06dHx5Mj379zo16/gy5n///ny583w48br2rffyJTcxI3bw4rStG/69OXfypbp2LPo2LHYvoH////59Ojk0qb9+vTn1avizqDexpHStnH//fT68+L8+e3hy5q5XAjHAAAAenRSTlMAFAISBvwOA/r5ChAI6CcM9u7xGQb48iMeFgqldmRBMR0XAe/Z1tHPyb65szQvKw78++Pe3NnLwbyrpIVvXlVNLysf/Ovr6eDd2MnGsZ+Wj4J/WVZLPDwwJvPm4djNx7yym5qBenJoXEg7KiUkFBHMiYVaT0tGLiggHLcjUo4AAAjqSURBVFjDnZeHW1NXGMaD7C3gAMSiVat1tWpdrbutdWtrHd17793es5KQ5GZvDElIyDSBsPfew93+Sf1uFJJAsNL3gTyQk/O77zfud09Ei6r8xJcvbdtbtHx5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
+
+
+
+
+
+
+3-606-2
+
+614434630a
+多买点材料
+白钢，玄铁，
+200军票材料，焦炭
+
+/e ET 0/12: [园艺]传送[滞潮村]采集[帝王蕨菜]
+/e ET 2/14: [采矿]传送[奥斯xx严命城]采集[辉钴铁矿]
+/e ET 4/16: [园艺]传送[上路客店]采集[紫草]
+/e ET 6/18: [采矿]传送[马克xxx广场]采集[尊紫碎块]
+/e ET 8/20: [园艺]传送[群花馆]采集[印茄原木]
+/e ET10/22: [采矿]传送[鼹灵集市]采集[梣树明矾]
+
+/e ET 0/12: [园艺]传送[奥斯塔尔严命城]采集[荆树皮]
+/e ET 2/14: [采矿]传送[云村]采集[白夜结晶]
+/e ET 4/16: [采矿]传送[图拉姆村]采集[超硬水]
+/e ET 6/18: [园艺]传送[络尾聚落]采集[银山毛榉原木]
+/e ET 8/20: [采矿]传送[蛇形枝]采集[苦灰石]
+/e ET10/22: [园艺]传送[法诺村]采集[苍棉花]
+
+https://bbs.nga.cn/read.php?&tid=24544268&pid=474905179&to=1
+
+
+任务“一个小问题”无法进行，npc“努德”停留在原地不动
+1.04修复
+
+CLUB-INPD-7536-QW3C-WBOQ
+CLUBINPD7536QW3CWBOQ
+
+
+
+
+
+
+也希望同樣喜歡“全裸”+“物化”的同好提供好的企畫創意。比如您認為，除了家具、植物、寵物、閘機、機器人、充氣娃娃這些已經拍成過片子的創意外，還有什麼物品是可以“女體化”的？謝謝！
+购物车、超市货架什么的，多年的性幻想
+
+tj23d45hg
+TJ23D45HG
+
+湿湿的脚。evis-312，日本
+
+常见的在线视频 html写法
+http://www.javlibrary.com/cn/?v=javli7aqt4
+RCTD-098 組み立て式人型家具DIYキット ～自分で作る喜び、使う（ハメる）悦び～
+
+R社还是有很多人间女体化的片子的，
+RCTD-016 地铁闸机女体化
+RCT-148 栽培女体化，种下种子长出女人
+RCT-126 街头裸体铜像
+RCT-122 扑克牌实体化
+RCT-098 RCT-156 人間便器
+
+SOD也有很多
+SACE-086 钥匙和锁拟人化
+SDMS-869 東京pussy花園
+SDMS-993 FUCK-1女体赛车竞赛
+SDMS-604 人間自販機
+SDMS-491 SDMT-263 人間家具
+SDMS-638 人間玩具
+
+我记得SVDVD也有个扮演狗的！
+SVDVD-211
+
+还有一个男人家具化的，CJOD-107 人間家具SM女王様と変態M男の性活 水野朝陽
