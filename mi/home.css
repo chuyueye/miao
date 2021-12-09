@@ -24,4 +24,14 @@ a {
 }
 .top .topbar-cart {
     float: right;
+    width: 120px;
+    transition: all .2s;
+}
+.top .cart-mini  {
+    height: 40px;
+    text-align: center;
+    display:block;
+}
+.iconfont-cart::before {
+    content:"\E60C"
 }
