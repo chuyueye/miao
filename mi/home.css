@@ -33,6 +33,7 @@ a {
     width: 120px;
     transition: all .2s;
     margin-left: 15px;
+    position:relative;
 }
 .top .cart-mini  {
     height: 40px;
@@ -51,9 +52,15 @@ a {
     width: 1226px;
     margin: auto;
 }
-.top .cart-menu {
+.top .topbar-cart div.cart-menu {
     width: 316px;
+    height:100px;
+    display:;
+    position:absolute;
+    right:0;
+    display: none;
 }
+
 .top a:hover {
     color:#fff;
 }
