@@ -52,15 +52,31 @@ a {
     width: 1226px;
     margin: auto;
 }
-.top .topbar-cart div.cart-menu {
+.top  div.cart-menu {
     width: 316px;
-    height:100px;
-    display:;
+    height: 0px;
+    z-index: 31;
     position:absolute;
     right:0;
-    display: none;
+    xdisplay: none;
+    color: #424242;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    transition: height .4s;
+    overflow: hidden;
 }
-
+.topbar-cart:hover div.cart-menu {
+    display: block;
+    height: 100px;
+}
+.cart-menu .menu-content {
+    padding: 20px 0 0;
+}
+.cart-menu .menu-content div {
+    margin: 0 20px 20px ;
+    padding: 20px 0;
+    text-align: center;
+}
 .top a:hover {
     color:#fff;
 }
@@ -68,6 +84,7 @@ a {
     float: right;
     line-height: 40px;
 }
+
 .top .topbar-info a.link {
     padding: 0 5px;
 }
