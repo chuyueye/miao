@@ -1,0 +1,45 @@
+
+
+
+
+let num = 21;
+
+let array_1 = [2,3,5,7,
+11,13,17,19,
+23,29,
+31,37,
+41,43,47,
+53,59,
+61,67,
+71,73,79,
+83,89,
+97]
+
+let txt = false;
+function fun(value,index,array){
+	txt = txt || num === value;
+}
+
+array_1.forEach(fun);
+console.log(txt);
+
+function isPrimeNumber(num) {
+			let array_1 = [2,3,5,7,
+		11,13,17,19,
+		23,29,
+		31,37,
+		41,43,47,
+		53,59,
+		61,67,
+		71,73,79,
+		83,89,
+		97]
+
+		let txt = false;
+		function fun(value,index,array){
+			txt = txt || num === value;
+		}
+
+		array_1.forEach(fun);
+		console.log(txt);
+}
