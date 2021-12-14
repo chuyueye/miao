@@ -1,0 +1,72 @@
+
+
+详解 flex-grow 与 flex-shrink - 谢然的文章 - 知乎
+https://zhuanlan.zhihu.com/p/24372279
+
+
+|充电大喵| 2021/11/29 11:58:48
+justify-content: space-evenly; /* 行中的元素在行中的水平位置 */
+align-items: stretch; /* 行中的元素在一行中的垂直位置 */
+align-content: stretch; /* 所有行在父元素垂直位置，或是父元素中垂直方向额外空间如何分配给行 */
+align-self: center; /* 元素自身在行中，交叉轴方向上的摆放 */
+flex-basis: 80px; /* 在主轴水平时，它代表宽度，在主轴垂直时，它代表高度，当它不为auto时，总它更优先 */
+flex:  auto  ;  /*  在这一个属性上设定 flex-basis flex-grow flex-shrink */
+
+flex-direction 设定主轴方向
+flex-wrap 设定交叉轴方向
+flex-flow 一个属性设定主轴与交叉轴方向
+
+order 设定元素的展示顺序
+gap 设定元素之间及行或列之间的间隔
+
+
+flex的空间是先近元素自身大小进行折行
+折行以后再考虑扩张或收缩，但扩展与收缩一定不会影响子元素在行上分配
+扩张以后再考虑额外空间分给margin auto
+之后再考虑额外空间通过justify-content来分配
+flex子元素不能浮动，设定会无效
+flex父元素中的连续的匿名文本会被当成一个flex子元素，但是由于没有元素包裹，所以也无法选中它，所以不能为其设置任何flex样式
+
+|充电大喵| 2021/11/29 11:59:34
+flex布局实现居中，邮箱，词典布局
+
+|充电大喵| 2021/11/29 12:00:28
+http://flexboxfroggy.com/
+
+|充电大喵| 2021/11/29 12:02:53
+https://flexbox.tech/
+
+|充电大喵| 2021/11/29 14:29:27
+先自习
+
+
+|充电大喵| 10:24:51
+https://jsbin.com/buzonavere/edit?html,css,output
+https://jsbin.com/tavuvokeya/edit?html,css,output
+词典布局
+
+|充电大喵| 10:25:03
+https://jsbin.com/tutuhexaqi/3/edit?html,css,output
+https://jsbin.com/tarijadeyo/edit?html,css,output
+QQ邮箱布局
+
+|充电大喵| 10:58:08
+https://jsbin.com/vamowovima/3/edit?html,css,output
+小米首页轮播图纯css
+
+|充电大喵| 11:40:08
+https://jsbin.com/puyumupeki/2/edit?html,css,output
+小米首页hover切换选项卡纯css
+
+作业：通过media query让一个div在width小于400时是红色，400到600之间是绿色，600到800之间是蓝色，
+800到1000之间是黄色，1000以上是紫色
+
+
+|充电大喵| 10:35:01
+https://jsbin.com/doxukayocu/2/edit?html,css,output
+根据元素数量改变布局
+
+|充电大喵| 11:51:52
+https://jsbin.com/pizemetehu/2/edit?html,css,output
+小米首页轮播图菜单多列布局
+
