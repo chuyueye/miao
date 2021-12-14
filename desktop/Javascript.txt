@@ -43,3 +43,5 @@ function isPrimeNumber(num) {
 		array_1.forEach(fun);
 		console.log(txt);
 }
+
+isPrimeNumber(5)
