@@ -124,3 +124,8 @@ rl.on('line', function (line) {
 
 https://ac.nowcoder.com/acm/contest/5652/
 A+B
+
+
+let a = require('http');
+let b = a.split(" ")
+console.log(b[1])
