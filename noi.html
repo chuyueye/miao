@@ -328,14 +328,14 @@ scriptddssscscsscricscririririridvridv -->
 </script>
 
 <script id="ch0104/16">
+    //16:三角形判断
     let a = +prompt()
     let b = +prompt()
     let c = +prompt()
     let longest
-    if(a>b)
-        {if (a>c) longest = (a)}
-    else if (b>c) longest = (b)
-    else longest = (c)
+    if (a>b&&a>c) {longest = a}
+    else if (b>c) longest = b
+    else longest = c
     console.log(
         a+b+c-2*longest>0?
         "YES":"NO"
@@ -363,6 +363,7 @@ scriptddssscscsscricscririririridvridv -->
 </script>
 
 <script id="ch0104/19">
+    //19:简单计算器
     let a = prompt()
     let b = prompt()
     let operator = prompt();
