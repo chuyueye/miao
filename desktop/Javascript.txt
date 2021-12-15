@@ -134,3 +134,8 @@ n = prompt()
 a = if (n>0) 5 else 4
 
 if else ,格式，多重嵌套格式
+if (false) console.log(2)
+console.log(3)
+
+console.log 里面的所有符号要加引号！！！！
++ " " +

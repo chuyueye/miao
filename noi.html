@@ -104,6 +104,7 @@
 </script>
 
 <script id="ch0103/15">
+    //15:苹果和虫子
     let n = Number(prompt("n"));
     let x = Number(prompt("x"));
     let y = Number(prompt("y"));
@@ -382,11 +383,38 @@ scriptddssscscsscricscririririridvridv -->
 </script>
 
 <script id="ch0104/20">
-    
+    // 20:求一元二次方程的根
+    let a = prompt()
+    let b = prompt()
+    let c = prompt()
+    let delta = b*b-4*a*c
+    if (delta==0) {
+        console.log(("x1=x2="+-b/2/a).toFixed(5))
+    } else if (delta>0) {
+        console.log(
+            "x1=" + ((-b+delta**(1/2))/2/a).toFixed(5) + ";" +
+            ";x2=" + ((-b-delta**(1/2))/2/a).toFixed(5)
+        )
+    } else {
+        console.log(
+            "x1="+(-b/2/a).toFixed(5)+"+"+
+            ((-delta)**(1/2)/2/a).toFixed(5)+"i"+
+            ";x2="+(-b/2/a).toFixed(5)+"-"+
+            ((-delta)**(1/2)/2/a).toFixed(5)+"i"
+        )
+    }
 </script>
 
 <script id="ch0104/21">
-    
+    //21:苹果和虫子2
+    let n = prompt()
+    let x = prompt()
+    let y = prompt()
+    if (y <= n * x){
+        console.log(
+            n-Math.ceil(y/x)
+        )
+    }
 </script>
 
 <!-- 1
