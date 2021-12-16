@@ -456,35 +456,98 @@ div.$*5    -->
 </script>
 
 <script id="ch0105/03">
-
+//03:均值
+let n = prompt()
+    let i = 0
+    let sum = 0
+    while (i < n) {
+        sum = sum + Number(prompt()),
+            i++
+    }
+    console.log((sum / n).toFixed(4))
 </script>
 
 <script id="ch0105/04">
-
+//04:求整数的和与均值
+    let n = prompt()
+    let i = 0
+    let sum = 0
+    while (i < n) {
+        sum = sum + Number(prompt()),
+            i++
+    }
+    console.log(sum)
+    console.log((sum / n).toFixed(5))
 </script>
 
 <script id="ch0105/05">
-
+    let n = prompt()
+    let max = 0
+    for(let i = 0; i < n ; i++){
+        let a = prompt()
+        if (a>max) {max = a}
+    }
+    console.log(max)
 </script>
 
 <script id="ch0105/06">
-
+    let n = prompt()
+    let max = 0
+    let min = 1000
+    for(let i = 0; i < n ; i++){
+        let a = prompt()
+        if (a>max) {max = a}
+        if (a<min) {min = a}
+    }
+    console.log(max-min)
 </script>
 
 <script id="ch0105/07">
-
+//金银铜；07:奥运奖牌计数
+    let n = prompt()
+    let i = 0
+    let sum1 = 0
+    let sum2 = 0
+    let sum3 = 0
+    while (i < n) {
+        sum1 = sum1 + Number(prompt())
+        sum2 = sum2 + Number(prompt())
+        sum3 = sum3 + Number(prompt())
+        i++
+    }
+    console.log(sum1)
+    console.log(sum2)
+    console.log(sum3)
+    console.log(sum1+sum2+sum3)
 </script>
 
 <script id="ch0105/08">
-
+    let n = +prompt()
+    let wznj = (n-2)*180
+    for(let i = 0; i < n-1 ; i++){
+        wznj = wznj - prompt()
+    }
+    console.log(wznj)
 </script>
 
 <script id="ch0105/09">
-
+    let m = +prompt()
+    let n = +prompt()
+    let sum = 0
+    for(let i = (m%2==1?m:m+1); i <= n ; i=i+2){
+        sum = sum +i
+    }
+    console.log(sum)
 </script>
 
 <script id="ch0105/10">
-
+    let m = +prompt()
+    let n = +prompt()
+    let sum = 0
+    if (m%17!=0) m = m - m%17 + 17
+    for(let i = m; i <= n ; i=i+17){
+        sum = sum +i
+    }
 </script>
 
 <script id="ch0105/11">
