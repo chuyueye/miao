@@ -1,42 +1,40 @@
-
-
 <script id="ch0103/01">
     let a = Number(prompt('a'));
     let b = Number(prompt('b'));
-    console.log(a+b)
+    console.log(a + b)
 </script>
 
 <script id="ch0103/02">
     let a = Number(prompt("a"))
     let b = Number(prompt("b"))
     let c = Number(prompt("c"))
-    console.log((a+b)*c)
+    console.log((a + b) * c)
 </script>
 
 <script id="ch0103/03">
     let a = Number(prompt("a"))
     let b = Number(prompt("b"))
     let c = Number(prompt("c"))
-    console.log((a+b-(a+b)%c)/c)
+    console.log((a + b - (a + b) % c) / c)
 </script>
 
 <script id="ch0103/04">
     let a = Number(prompt("a"))
     let b = Number(prompt("b"))
-    console.log((a-a%b)/b)
-    console.log(a%b)
+    console.log((a - a % b) / b)
+    console.log(a % b)
 </script>
 
 <script id="ch0103/05">
     let a = Number(prompt("a"));
     let b = Number(prompt("b"));
-    console.log((a/b).toFixed(9))
+    console.log((a / b).toFixed(9))
 </script>
 
 <script id="ch0103/06">
     let a = Number(prompt("a"));
     let b = Number(prompt("b"));
-    console.log((100*b/a).toFixed(3)+"%")
+    console.log((100 * b / a).toFixed(3) + "%")
 </script>
 <!-- console.log 设置快捷键 -->
 <script id="ch0103/07">
@@ -45,25 +43,25 @@
     let b = Number(prompt("b"));
     let c = Number(prompt("c"));
     let d = Number(prompt("d"));
-    console.log((a*x*x*x+b*x*x+c*x+d).toFixed(7))
+    console.log((a * x * x * x + b * x * x + c * x + d).toFixed(7))
 </script>
 
 <script id="ch0103/08">
     let f = Number(prompt("f"));
-    console.log((5*(f-32)/9).toFixed(5))
+    console.log((5 * (f - 32) / 9).toFixed(5))
 </script>
 
 <script id="ch0103/09">
     let r = Number(prompt("r"));
-    console.log((2*r).toFixed(4))
-    console.log((2*3.14159*r).toFixed(4))
-    console.log((3.14159*r*r).toFixed(4))
+    console.log((2 * r).toFixed(4))
+    console.log((2 * 3.14159 * r).toFixed(4))
+    console.log((3.14159 * r * r).toFixed(4))
 </script>
 
 <script id="ch0103/10">
     let a = Number(prompt("a"));
     let b = Number(prompt("b"));
-    console.log((1/(1/a+1/b)).toFixed(2))
+    console.log((1 / (1 / a + 1 / b)).toFixed(2))
 </script>
 
 <script id="ch0103/11">
@@ -80,7 +78,7 @@
 <script id="ch0103/12">
     let r = Number(prompt("r"));
     console.log(
-        (r*r*r*4/3*3.14).toFixed(2)
+        (r * r * r * 4 / 3 * 3.14).toFixed(2)
     )
 </script>
 
@@ -89,11 +87,11 @@
     // a = (x - x%100)/100;
     // b = x-x%10/10 - ;
     // c = x - a - b
-    a = x.slice(0,1);
-    b = x.slice(1,2);
-    c = x.slice(2,3);
+    a = x.slice(0, 1);
+    b = x.slice(1, 2);
+    c = x.slice(2, 3);
     console.log(
-        c+b+a
+        c + b + a
     )
 </script>
 
@@ -101,7 +99,7 @@
     let h = Number(prompt("h"));
     let r = Number(prompt("r"));
     console.log(
-        Math.ceil(20*1000/(3.14159*r*r*h))
+        Math.ceil(20 * 1000 / (3.14159 * r * r * h))
     )
 </script>
 
@@ -111,7 +109,7 @@
     let x = Number(prompt("x"));
     let y = Number(prompt("y"));
     console.log(
-        n-Math.ceil(y/x)
+        n - Math.ceil(y / x)
     )
 </script>
 
@@ -122,8 +120,8 @@
     let yb = Number(prompt("yb"));
     console.log(
         (
-            ((xa-xb)**2 + (ya-yb)**2)**(1/2)
-        ).toFixed(3)      
+            ((xa - xb) ** 2 + (ya - yb) ** 2) ** (1 / 2)
+        ).toFixed(3)
     )
 </script>
 
@@ -135,9 +133,9 @@
     let x3 = Number(prompt("x3"));
     let y3 = Number(prompt("y3"));
     console.log(
-        (Math.abs(x1*y2-x1*y3+
-                 x2*y3-x2*y1+
-                 x3*y1-x3*y2)/2).toFixed(2)
+        (Math.abs(x1 * y2 - x1 * y3 +
+            x2 * y3 - x2 * y1 +
+            x3 * y1 - x3 * y2) / 2).toFixed(2)
     )
 </script>
 
@@ -146,37 +144,36 @@
     let a2 = Number(prompt("a2"));
     let n = Number(prompt("n"));
     console.log(
-        (n-1)*(a2-a1)+a1
-        )
+        (n - 1) * (a2 - a1) + a1
+    )
 </script>
 
 <script id="ch0103/19">
     let a = Number(prompt("a"));
     let b = Number(prompt("b"));
-    console.log(a*b)
+    console.log(a * b)
 </script>
 
 <script id="ch0103/20">
     let n = Number(prompt("n"));
-    console.log(2**n)
+    console.log(2 ** n)
 </script>
 
 <script>
     function isPrimeNumber(num) {
-        let array = [2,3,5,7,
-        11,13,17,19,
-        23. , 29,
-        31,37,
-        41,43,47, 
-        53, 59,
-        61,67,
-        71,73,79,
-        83, 89,
-        97 ]
+        let array = [2, 3, 5, 7,
+            11, 13, 17, 19,
+            23., 29,
+            31, 37,
+            41, 43, 47,
+            53, 59,
+            61, 67,
+            71, 73, 79,
+            83, 89,
+            97]
         let txt = false;
-        function fun(value, index, array)
-        {
-        txt = txt || num === value;
+        function fun(value, index, array) {
+            txt = txt || num === value;
         }
         array.forEach(fun);
         console.log(txt);
@@ -191,15 +188,15 @@ scriptddssscscsscricscririririridvridv -->
 
 <script id="ch0104/01">
     let n = prompt()
-    if (n>0) out = "positive"
-    else if (n=0) out = "zero"
+    if (n > 0) out = "positive"
+    else if (n = 0) out = "zero"
     else out = "negative"
     console.log(out)
 </script>
 
 <script id="ch0104/02">
     let n = prompt()
-    if (n>=0) out = n
+    if (n >= 0) out = n
     else out = -n
     console.log(out)
     // let n = prompt()
@@ -210,7 +207,7 @@ scriptddssscscsscricscririririridvridv -->
 <script id="ch0104/03">
     let n = prompt()
     console.log(
-        n%2 == 0 ?"even":"odd"
+        n % 2 == 0 ? "even" : "odd"
     )
 </script>
 
@@ -219,7 +216,7 @@ scriptddssscscsscricscririririridvridv -->
     let n = prompt()
     let b = n.charCodeAt(0)
     console.log(
-        b%2 == 0 ? "NO" : "YES"
+        b % 2 == 0 ? "NO" : "YES"
     )
 </script>
 
@@ -231,17 +228,18 @@ scriptddssscscsscricscririririridvridv -->
     let x = prompt()
     let y = prompt()
     if (x === y) ou = "="
-    else if ( x > y) ou = ">"
-    else  ou = "<"
+    else if (x > y) ou = ">"
+    else ou = "<"
     console.log(ou)
 </script>
 
 <script id="ch0104/06">
     let x = prompt()
     let out = 0
-    if (x>=10)
-        {if (x<=99)
-        out = 1}
+    if (x >= 10) {
+        if (x <= 99)
+            out = 1
+    }
     console.log(out)
 </script>
 
@@ -249,7 +247,7 @@ scriptddssscscsscricscririririridvridv -->
     let xingyun = prompt()
     let guli = prompt()
     console.log(
-        xingyun >= 10 || guli >=20 ? 1 :0
+        xingyun >= 10 || guli >= 20 ? 1 : 0
     )
 </script>
 
@@ -267,7 +265,7 @@ scriptddssscscsscricscririririridvridv -->
     if (n % 3 == 0) console.log(3)
     if (n % 5 == 0) console.log(5)
     if (n % 7 == 0) console.log(7)
-    if (n%3 != 0 && n%5 != 0 && n%7 != 0 ) console.log("n")
+    if (n % 3 != 0 && n % 5 != 0 && n % 7 != 0) console.log("n")
 </script>
 
 <script id="ch0104/10">
@@ -275,14 +273,14 @@ scriptddssscscsscricscririririridvridv -->
     let shuxue = prompt()
     let plus = yuwen < 60 + (shuxue < 60)
     console.log(
-            plus == 1 ? 1:0
+        plus == 1 ? 1 : 0
     )
 </script>
 
 <script id="ch0104/11">
     let riqi = prompt()
     console.log(
-        riqi == 1 ||riqi == 3|| riqi == 5 ? "NO" : "YES"
+        riqi == 1 || riqi == 3 || riqi == 5 ? "NO" : "YES"
     )
 </script>
 
@@ -290,22 +288,22 @@ scriptddssscscsscricscririririridvridv -->
     let mi = prompt()
     // let how
     // if (27+23 + mi/3 > mi/1.2)
-    if (mi == 100)  console.log("All")
+    if (mi == 100) console.log("All")
     if (mi > 100) console.log("Bike")
     else console.log("Walk")
 </script>
 
 <script id="ch0104/13">
     let x = prompt()
-    if (x<5) console.log(
-        (-x+2.5).toFixed(3)
-        )
-    if (x>=5) {
+    if (x < 5) console.log(
+        (-x + 2.5).toFixed(3)
+    )
+    if (x >= 5) {
         // if (x < 10) 
         console.log(
-           ( x<10?
-            2-1.5*(x-3)*(x-3):
-            x/2-1.5).toFixed(3)
+            (x < 10 ?
+                2 - 1.5 * (x - 3) * (x - 3) :
+                x / 2 - 1.5).toFixed(3)
         )
     }
 </script>
@@ -315,10 +313,10 @@ scriptddssscscsscricscririririridvridv -->
     let w = prompt()
     let YN = prompt()
     let p = 8
-    if (w >= 1000) 
-     p = Math.ceil(w/500)*4
-    console.log (
-        p+(YN=="y"?5:0)
+    if (w >= 1000)
+        p = Math.ceil(w / 500) * 4
+    console.log(
+        p + (YN == "y" ? 5 : 0)
     )
 </script>
 
@@ -328,8 +326,8 @@ scriptddssscscsscricscririririridvridv -->
     let b = +prompt()
     let c = +prompt()
     // let max
-    if (a>b && a>c) console.log(a)
-    else if (b>c) console.log(b)
+    if (a > b && a > c) console.log(a)
+    else if (b > c) console.log(b)
     else console.log(c)
 </script>
 
@@ -339,23 +337,23 @@ scriptddssscscsscricscririririridvridv -->
     let b = +prompt()
     let c = +prompt()
     let longest
-    if (a>b && a>c) longest = a
-    else if (b>c) longest = b
+    if (a > b && a > c) longest = a
+    else if (b > c) longest = b
     else longest = c
 
     console.log(
-        a+b+c>2*longest?
-        "yes":"NO"
+        a + b + c > 2 * longest ?
+            "yes" : "no"
     )
 </script>
 
 <script id="ch0104/17">
     //闰年
     let a = prompt()
-    let yn = (a%400 == 0 || 
-    a%4 == 0 && a%100 !=0)
+    let yn = (a % 400 == 0 ||
+        a % 4 == 0 && a % 100 != 0)
     console.log(
-        yn?"Y":"N"
+        yn ? "Y" : "N"
     )
 </script>
 
@@ -363,9 +361,9 @@ scriptddssscscsscricscririririridvridv -->
     let x = prompt()
     let y = prompt()
     if (
-        (x >= -1 && x <=1) &&
-        (y >= -1 && y <=1)
-    )console.log("yes")
+        (x >= -1 && x <= 1) &&
+        (y >= -1 && y <= 1)
+    ) console.log("yes")
     else console.log("no")
 </script>
 
@@ -377,18 +375,18 @@ scriptddssscscsscricscririririridvridv -->
     if (operator === "+" ||
         operator === "-" ||
         operator === "*" ||
-        operator === "/" 
-    ){} 
+        operator === "/"
+    ) { }
     else console.log("Invalid operator!")
 
-    if (operator === "+") console.log(a+b)
-    if (operator === "-") console.log(a-b)
-    if (operator === "*") console.log(a*b)
-    if (operator === "/"){
-        if (b==0)  console.log("Divided by zero!")
-        else console.log(a/b)
-    } 
-    
+    if (operator === "+") console.log(a + b)
+    if (operator === "-") console.log(a - b)
+    if (operator === "*") console.log(a * b)
+    if (operator === "/") {
+        if (b == 0) console.log("Divided by zero!")
+        else console.log(a / b)
+    }
+
 </script>
 
 <script id="ch0104/20">
@@ -397,20 +395,20 @@ scriptddssscscsscricscririririridvridv -->
     let a = +prompt()
     let b = +prompt()
     let c = +prompt()
-    let delta = b*b-4*a*c
-    if (delta==0) {
-        console.log(("x1=x2="+-b/2/a).toFixed(5))
-    } else if (delta>0) {
+    let delta = b * b - 4 * a * c
+    if (delta == 0) {
+        console.log(("x1=x2=" + -b / 2 / a).toFixed(5))
+    } else if (delta > 0) {
         console.log(
-            "x1=" + ((-b+delta**(1/2))/2/a).toFixed(5) + ";" +
-            ";x2=" + ((-b-delta**(1/2))/2/a).toFixed(5)
+            "x1=" + ((-b + delta ** (1 / 2)) / 2 / a).toFixed(5) + ";" +
+            ";x2=" + ((-b - delta ** (1 / 2)) / 2 / a).toFixed(5)
         )
     } else {
         console.log(
-            "x1="+(-b/2/a).toFixed(5)+"+"+
-            ((-delta)**(1/2)/2/a).toFixed(5)+"i"+
-            ";x2="+(-b/2/a).toFixed(5)+"-"+
-            ((-delta)**(1/2)/2/a).toFixed(5)+"i"
+            "x1=" + (-b / 2 / a).toFixed(5) + "+" +
+            ((-delta) ** (1 / 2) / 2 / a).toFixed(5) + "i" +
+            ";x2=" + (-b / 2 / a).toFixed(5) + "-" +
+            ((-delta) ** (1 / 2) / 2 / a).toFixed(5) + "i"
         )
     }
 </script>
@@ -420,9 +418,9 @@ scriptddssscscsscricscririririridvridv -->
     let n = prompt()
     let x = prompt()
     let y = prompt()
-    if (y <= n * x){
+    if (y <= n * x) {
         console.log(
-            n-Math.ceil(y/x)
+            n - Math.ceil(y / x)
         )
     }
 </script>
@@ -431,3 +429,201 @@ scriptddssscscsscricscririririridvridv -->
 1 -->
 <!-- [$]*8
 div.$*5    -->
+
+<script id="ch0105/01">
+    let n = prompt()
+    // let a = prompt()
+    // let b = prompt()
+    let i = 0
+    let sum = 0
+    while (i < n) {
+        sum = sum + Number(prompt()),
+            i++
+    }
+    console.log((sum / n).toFixed(2))
+</script>
+
+<script id="ch0105/02">
+    let i = 0
+    let sum = 0
+    while (i < 12) {
+        sum = sum + Number(prompt())
+        i++
+    }
+    console.log(
+        "$"+(sum).toFixed(2)
+    )
+</script>
+
+<script id="ch0105/03">
+
+</script>
+
+<script id="ch0105/04">
+
+</script>
+
+<script id="ch0105/05">
+
+</script>
+
+<script id="ch0105/06">
+
+</script>
+
+<script id="ch0105/07">
+
+</script>
+
+<script id="ch0105/08">
+
+</script>
+
+<script id="ch0105/09">
+
+</script>
+
+<script id="ch0105/10">
+
+</script>
+
+<script id="ch0105/11">
+
+</script>
+
+<script id="ch0105/12">
+
+</script>
+
+<script id="ch0105/13">
+
+</script>
+
+<script id="ch0105/14">
+
+</script>
+
+<script id="ch0105/15">
+
+</script>
+
+<script id="ch0105/16">
+
+</script>
+
+<script id="ch0105/17">
+
+</script>
+
+<script id="ch0105/18">
+
+</script>
+
+<script id="ch0105/19">
+
+</script>
+
+<script id="ch0105/20">
+
+</script>
+
+<script id="ch0105/21">
+
+</script>
+
+<script id="ch0105/22">
+
+</script>
+
+<script id="ch0105/23">
+
+</script>
+
+<script id="ch0105/24">
+
+</script>
+
+<script id="ch0105/25">
+
+</script>
+
+<script id="ch0105/26">
+
+</script>
+
+<script id="ch0105/27">
+
+</script>
+
+<script id="ch0105/28">
+
+</script>
+
+<script id="ch0105/29">
+
+</script>
+
+<script id="ch0105/30">
+
+</script>
+
+<script id="ch0105/31">
+
+</script>
+
+<script id="ch0105/32">
+
+</script>
+
+<script id="ch0105/33">
+
+</script>
+
+<script id="ch0105/34">
+
+</script>
+
+<script id="ch0105/35">
+
+</script>
+
+<script id="ch0105/36">
+
+</script>
+
+<script id="ch0105/37">
+
+</script>
+
+<script id="ch0105/38">
+
+</script>
+
+<script id="ch0105/39">
+
+</script>
+
+<script id="ch0105/40">
+
+</script>
+
+<script id="ch0105/41">
+
+</script>
+
+<script id="ch0105/42">
+
+</script>
+
+<script id="ch0105/43">
+
+</script>
+
+<script id="ch0105/44">
+
+</script>
+
+<script id="ch0105/45">
+
+</scr
+    ipt >

@@ -139,3 +139,16 @@ console.log(3)
 
 console.log 里面的所有符号要加引号！！！！
 + " " +
+
+	// let n = +prompt(),
+	// arr = []
+	// for (let i = 0; i < n; i++) 
+	// arr.push(+prompt())
+	// console.log( (eval(arr.join('+')) / n).toFixed(2) )
+
+No NOT use eval()
+Executing JavaScript from a string is an BIG security risk.
+
+With eval(), malicious code can run inside your application without permission.
+
+With eval(), third-party code can see the scope of your application, whitch can lead to possible attacks.
