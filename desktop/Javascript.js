@@ -156,12 +156,12 @@ With eval(), third-party code can see the scope of your application, whitch can 
 var x = 0;
 var y = 1;
 var z;
-
+var fib = []; // Initialize array!
 fib[0] = 0;
 fib[1] = 1;
 
 for (i = 2; i <= 10; i++) {
-  alert(x + y);
+  console.log(x + y);
   fib[i] = x + y;
   x = y;
   z = y;
