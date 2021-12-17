@@ -586,10 +586,11 @@ let n = prompt()
 </script>
 
 <script id="ch0105/14">
+    //14:人口增长问题,保留到小数点后四位
     let x = prompt()
     let n = prompt()
     console.log(
-        x*1.001**n
+        (x*1.001**n).toFixed(4)
     )
 </script>
     
@@ -634,7 +635,7 @@ let n = prompt()
     }
     console.log(k%2==1?a:b)
     function Fibonacci{
-        
+
     }
     eval(
         "a"+n+"=Fibonacci"
