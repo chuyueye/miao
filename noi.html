@@ -578,7 +578,7 @@ let n = prompt()
 </script>
 
 <script id="ch0105/13">
-
+    let n = prompt()
 </script>
 
 <script id="ch0105/14">
@@ -610,11 +610,34 @@ let n = prompt()
 </script>
 
 <script id="ch0105/21">
-
+    let n = prompt()
+    while (n!=1){
+        if (n%2 == 1){
+            console.log(n+"*3+1="+(n*3+1))
+            n = n*3+1
+        } else {
+            console.log(n+"/2="+ n/2)
+            n = n / 2
+        }
+    }
+    console.log("End")
 </script>
 
 <script id="ch0105/22">
-
+    let yuqian = 0
+    let jiyue = 0
+    let chuxu = 0
+    while (yuqian>=0 && jiyue<12){
+    yuqian = ( yuqian+300-prompt() )
+    jiyue++
+        if (yuqian<0){
+            console.log(-jiyue)
+        } else {
+            chuxu = chuxu + (yuqian - yuqian%100)
+            yuqian = yuqian%100 
+        }
+    }
+    if (yuqian>0){console.log(yuqian+chuxu*1.2)}
 </script>
 
 <script id="ch0105/23">
