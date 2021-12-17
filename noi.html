@@ -579,6 +579,7 @@ let n = prompt()
 </script>
 
 <script id="ch0105/13">
+    //13:乘方计算,求幂，作弊方法（洛必达警告⚠）
     let a = prompt()
     let n = prompt()
     console.log(a**n)
@@ -602,11 +603,42 @@ let n = prompt()
 </script>
 
 <script id="ch0105/16">
-
+    //程序员不吃不喝，中关村公馆买一套60平米的房子
+    //老师你没讲break就让我们做这个？
+    let N = prompt()
+    let K = prompt()
+    let y = 1
+    while(true){
+    if(
+        200*(1+K/100)**(y-1) <= N*y
+    ) break
+    y++
+    }
+    console.log(y)
+    //有问题，年薪,年终奖应该年底发而不是“现在”发，
+    //然而房价年底就增长K%
 </script>
 
 <script id="ch0105/17">
-
+    /* 17:菲波那契数列,保存每个数？
+    let a1,a2,a3,a....
+    
+    */
+    // Array？不能固定替换两个内存位置其中一个，
+    let k = prompt()
+    a = 1
+    b = 1
+    for (let i = 3;i<=k;i++ ) {
+        if (i%2==1) { a = a + b}
+        else { b = a + b }
+    }
+    console.log(k%2==1?a:b)
+    function Fibonacci{
+        
+    }
+    eval(
+        "a"+n+"=Fibonacci"
+    )
 </script>
 
 <script id="ch0105/18">
