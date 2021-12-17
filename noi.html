@@ -609,19 +609,22 @@ let n = prompt()
     let N = prompt()
     let K = prompt()
     let y = 1
-    while(true){
+    for(let i = 1;i<=20;i++){
     if(
         200*(1+K/100)**(y-1) <= N*y
+        //第一年强制0次方
     ) break
     y++
     }
-    console.log(y)
+    console.log(y!=21?y-1:"Impossible")
+
     //有问题，年薪,年终奖应该年底发而不是“现在”发，
     //然而房价年底就增长K%
 </script>
 
 <script id="ch0105/17">
     /* 17:菲波那契数列,保存每个数？
+    Fibonacci
     let a1,a2,a3,a....
     
     */
@@ -634,12 +637,12 @@ let n = prompt()
         else { b = a + b }
     }
     console.log(k%2==1?a:b)
-    function Fibonacci{
+    // function Fibonacci{
 
-    }
-    eval(
-        "a"+n+"=Fibonacci"
-    )
+    // }
+    // eval(
+    //     "a"+n+"=Fibonacci"
+    // )
 </script>
 
 <script id="ch0105/18">
