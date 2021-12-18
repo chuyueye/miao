@@ -697,17 +697,20 @@ div.$*5    -->
     // 10 5 (20) 6 7 (8)
     // 未知数（变量所占内存空间），题目中变量，
     // 自己应该设几个变量？
-    let m = prompt()
-    let n = prompt()
+    let m = +prompt()
+    let n = +prompt()
+    let meiquyaoren = 0
     for (let i = 0; i < n; i++) {
-        let quyao = prompt()
+        let quyao = +prompt()
         m = m - quyao
         if (m < 0) {
             m = m + quyao
-            i = i + 1
+            meiquyaoren = meiquyaoren + 1
         }
     }
-    console.log(i)
+    console.log(meiquyaoren)
+    // 注意变量作用域，初始化0，而不是NaN（undefined）
+    // prompt 一定要变成数字！，bug太多了！！！
 </script>
 
 <script id="ch0105/24">
@@ -735,11 +738,27 @@ div.$*5    -->
 </script>
 
 <script id="ch0105/30">
-
+    // 30:含k个3的数
+    // 输入两个正整数 m 和 k，其中1 < m < 100000，1 < k < 5 
+    // 判断 m 能否被19整除，且恰好含有k个3，
+    // m 和 k 的值，中间用单个空格间隔。
+    let m = prompt()
+    let k = prompt()
+    let kge3 = 0 //含有几个3，计数器
+    for (let i = 0 ;i < m.length;i++){
+        if (m[i]==3) kge3++
+    }
+    if (m % 19 == 0 && kge3 == k) {
+        console.log("YES")
+    } else {
+        console.log("NO")
+    }
+    // if 后一定要加括号,一定要用双等号"=="！！！！！
+    // 看清题目要求输出结果，比如大小写，括号
 </script>
 
 <script id="ch0105/31">
-
+    // 31:开关灯
 </script>
 
 <script id="ch0105/32">
