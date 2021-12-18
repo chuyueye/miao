@@ -745,8 +745,8 @@ div.$*5    -->
     let m = prompt()
     let k = prompt()
     let kge3 = 0 //含有几个3，计数器
-    for (let i = 0 ;i < m.length;i++){
-        if (m[i]==3) kge3++
+    for (let i = 0; i < m.length; i++) {
+        if (m[i] == 3) kge3++
     }
     if (m % 19 == 0 && kge3 == k) {
         console.log("YES")
@@ -759,6 +759,23 @@ div.$*5    -->
 
 <script id="ch0105/31">
     // 31:开关灯
+    // 第一个人（1号）将灯全部关闭
+    // 将凡是自己编号倍数的灯做相反处理。
+    // 请问：当第M个人操作之后，哪几盏灯是关闭的，按从小到大输出其编号，其间用逗号间隔。
+    let N = prompt()
+    let M = prompt()
+    //N盏灯是不是可以弄个length为N的array
+    //循环方法，每次循环让一个人去按开关，（别的循环方法另案讨论）
+    //灯的开关，1开，0关，如何输出？数组每个数检测一次然后记录
+    //OR，偶数开，奇数关。k%2判断
+    //let一个变量存储一个string（1，4，9），最后console.log
+    //array.push进去
+    let arrayd = [] //长度为N的数组
+    // 双循环
+    for (let i = 0; i < M; i++){ //M人循环,0到M-1
+        for (let j = 0; j < N; j++) //N灯循环,0到N-1
+        arrayd[j]++
+    }
 </script>
 
 <script id="ch0105/32">
