@@ -770,12 +770,16 @@ div.$*5    -->
     //OR，偶数开，奇数关。k%2判断
     //let一个变量存储一个string（1，4，9），最后console.log
     //array.push进去
-    let arrayd = [] //长度为N的数组
+    let arrayd = [] //长度为N的数组，每个都是undefined（NaN）
+    // Create an array with 40 undefined elements:
+    // const points = new Array(40);  
     // 双循环
-    for (let i = 0; i < M; i++){ //M人循环,0到M-1
-        for (let j = 0; j < N; j++) //N灯循环,0到N-1
+    for (let j = 0; j < N; j++) arrayd[j]=0 //undefined 到 0
+    for (let i = 0; i < M; i++){ //M人i循环,0到M-1，第(0+1)个人
+        for (let j = 0; j < N; j++) //N灯j循环,0到N-1
         arrayd[j]++
     }
+    //先写代码，再优化，从无到有，不要怕累赘
 </script>
 
 <script id="ch0105/32">
