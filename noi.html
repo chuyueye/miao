@@ -451,13 +451,13 @@ div.$*5    -->
         i++
     }
     console.log(
-        "$"+(sum/12).toFixed(2)
+        "$" + (sum / 12).toFixed(2)
     )
 </script>
 
 <script id="ch0105/03">
-//03:均值
-let n = prompt()
+    //03:均值
+    let n = prompt()
     let i = 0
     let sum = 0
     while (i < n) {
@@ -468,7 +468,7 @@ let n = prompt()
 </script>
 
 <script id="ch0105/04">
-//04:求整数的和与均值
+    //04:求整数的和与均值
     let n = prompt()
     let i = 0
     let sum = 0
@@ -483,9 +483,9 @@ let n = prompt()
 <script id="ch0105/05">
     let n = prompt()
     let max = 0
-    for(let i = 0; i < n ; i++){
+    for (let i = 0; i < n; i++) {
         let a = prompt()
-        if (a>max) {max = a}
+        if (a > max) { max = a }
     }
     console.log(max)
 </script>
@@ -494,16 +494,16 @@ let n = prompt()
     let n = prompt()
     let max = 0
     let min = 1000
-    for(let i = 0; i < n ; i++){
+    for (let i = 0; i < n; i++) {
         let a = prompt()
-        if (a>max) {max = a}
-        if (a<min) {min = a}
+        if (a > max) { max = a }
+        if (a < min) { min = a }
     }
-    console.log(max-min)
+    console.log(max - min)
 </script>
 
 <script id="ch0105/07">
-//金银铜；07:奥运奖牌计数
+    //金银铜；07:奥运奖牌计数
     let n = prompt()
     let i = 0
     let sum1 = 0
@@ -518,13 +518,13 @@ let n = prompt()
     console.log(sum1)
     console.log(sum2)
     console.log(sum3)
-    console.log(sum1+sum2+sum3)
+    console.log(sum1 + sum2 + sum3)
 </script>
 
 <script id="ch0105/08">
     let n = +prompt()
-    let wznj = (n-2)*180
-    for(let i = 0; i < n-1 ; i++){
+    let wznj = (n - 2) * 180
+    for (let i = 0; i < n - 1; i++) {
         wznj = wznj - prompt()
     }
     console.log(wznj)
@@ -534,8 +534,8 @@ let n = prompt()
     let m = +prompt()
     let n = +prompt()
     let sum = 0
-    for(let i = (m%2==1?m:m+1); i <= n ; i=i+2){
-        sum = sum +i
+    for (let i = (m % 2 == 1 ? m : m + 1); i <= n; i = i + 2) {
+        sum = sum + i
     }
     console.log(sum)
 </script>
@@ -544,9 +544,9 @@ let n = prompt()
     let m = +prompt()
     let n = +prompt()
     let sum = 0
-    if (m%17!=0) m = m - m%17 + 17
-    for(let i = m; i <= n ; i=i+17){
-        sum = sum +i
+    if (m % 17 != 0) m = m - m % 17 + 17
+    for (let i = m; i <= n; i = i + 17) {
+        sum = sum + i
     }
     console.log(sum)
 </script>
@@ -556,11 +556,11 @@ let n = prompt()
     let ci1 = 0
     let ci5 = 0
     let ci10 = 0
-    for (let i = 0;i<k;i++){
+    for (let i = 0; i < k; i++) {
         let a = prompt()
-        if (a==1) ci1++
-        if (a==5) ci5++
-        if (a==10) ci10++
+        if (a == 1) ci1++
+        if (a == 5) ci5++
+        if (a == 10) ci10++
     }
     // console.log(ci1+"\n",ci5+"\n",ci10)
     console.log(ci1)
@@ -572,8 +572,8 @@ let n = prompt()
     let N = prompt()
     let m = prompt()
     let ci = 0
-    for (let i = 0;i<N;i++){
-        if (m==prompt()) {ci++}
+    for (let i = 0; i < N; i++) {
+        if (m == prompt()) { ci++ }
     }
     console.log(ci)
 </script>
@@ -582,7 +582,7 @@ let n = prompt()
     //13:乘方计算,求幂，作弊方法（洛必达警告⚠）
     let a = prompt()
     let n = prompt()
-    console.log(a**n)
+    console.log(a ** n)
 </script>
 
 <script id="ch0105/14">
@@ -590,16 +590,16 @@ let n = prompt()
     let x = prompt()
     let n = prompt()
     console.log(
-        (x*1.001**n).toFixed(4)
+        (x * 1.001 ** n).toFixed(4)
     )
 </script>
-    
+
 <script id="ch0105/15">
     let R = prompt()
     let M = prompt()
     let Y = prompt()
     console.log(
-        Math.trunc((M*(1+R/100)**Y))
+        Math.trunc((M * (1 + R / 100) ** Y))
     )
 </script>
 
@@ -609,14 +609,14 @@ let n = prompt()
     let N = prompt()
     let K = prompt()
     let y = 1
-    for(let i = 1;i<=20;i++){
-    if(
-        200*(1+K/100)**(y-1) <= N*y
-        //第一年强制0次方
-    ) break
-    y++
+    for (let i = 1; i <= 20; i++) {
+        if (
+            200 * (1 + K / 100) ** (y - 1) <= N * y
+            //第一年强制0次方
+        ) break
+        y++
     }
-    console.log(y!=21?y:"Impossible")
+    console.log(y != 21 ? y : "Impossible")
 
     //有问题，年薪,年终奖应该年底发而不是“现在”发，
     //然而房价年底就增长K%
@@ -632,11 +632,11 @@ let n = prompt()
     let k = prompt()
     a = 1
     b = 1
-    for (let i = 3;i<=k;i++ ) {
-        if (i%2==1) { a = a + b}
+    for (let i = 3; i <= k; i++) {
+        if (i % 2 == 1) { a = a + b }
         else { b = a + b }
     }
-    console.log(k%2==1?a:b)
+    console.log(k % 2 == 1 ? a : b)
     // function Fibonacci{
 
     // }
@@ -659,12 +659,12 @@ let n = prompt()
 
 <script id="ch0105/21">
     let n = prompt()
-    while (n!=1){
-        if (n%2 == 1){
-            console.log(n+"*3+1="+(n*3+1))
-            n = n*3+1
+    while (n != 1) {
+        if (n % 2 == 1) {
+            console.log(n + "*3+1=" + (n * 3 + 1))
+            n = n * 3 + 1
         } else {
-            console.log(n+"/2="+ n/2)
+            console.log(n + "/2=" + n / 2)
             n = n / 2
         }
     }
@@ -675,21 +675,36 @@ let n = prompt()
     let yuqian = 0
     let jiyue = 0
     let chuxu = 0
-    while (yuqian>=0 && jiyue<12){
-    yuqian = ( yuqian+300-prompt() )
-    jiyue++
-        if (yuqian<0){
+    while (yuqian >= 0 && jiyue < 12) {
+        yuqian = (yuqian + 300 - prompt())
+        jiyue++
+        if (yuqian < 0) {
             console.log(-jiyue)
         } else {
-            chuxu = chuxu + (yuqian - yuqian%100)
-            yuqian = yuqian%100 
+            chuxu = chuxu + (yuqian - yuqian % 100)
+            yuqian = yuqian % 100
         }
     }
-    if (yuqian>0){console.log(yuqian+chuxu*1.2)}
+    if (yuqian > 0) { console.log(yuqian + chuxu * 1.2) }
 </script>
 
 <script id="ch0105/23">
-
+    // 23:药房管理
+    // 共3行
+    // 第一行是每天开始时的药品总量m
+    // 第二行是这一天取药的人数n（0 < n <= 100）
+    // 第三行共有n个数，分别记录了每个病人希望取走的药品数量（按照时间先后的顺序），两数之间以空格分隔
+    // 10 5 (20) 6 7 (8)
+    let m = prompt()
+    let n = prompt()
+    for (let i = 0; i < n; i++) {
+        let quyao = prompt()
+        m = m - quyao
+        if (m < 0) {
+            m = m + quyao
+            i = i + 1
+        }
+    }
 </script>
 
 <script id="ch0105/24">
