@@ -766,7 +766,7 @@ div.$*5    -->
     let M = prompt()
     //N盏灯是不是可以弄个length为N的array
     //循环方法，每次循环让一个人去按开关，（别的循环方法另案讨论）
-    //灯的开关，1开，0关，如何输出？数组每个数检测一次然后记录
+    //灯的开关，0开，1关，如何输出？数组每个数检测一次然后记录
     //OR，偶数开，奇数关。k%2判断
     //let一个变量存储一个string（1，4，9），最后console.log
     //array.push进去
@@ -774,11 +774,20 @@ div.$*5    -->
     // Create an array with 40 undefined elements:
     // const points = new Array(40);  
     // 双循环
-    for (let j = 0; j < N; j++) arrayd[j]=0 //undefined 到 0
-    for (let i = 0; i < M; i++){ //M人i循环,0到M-1，第(0+1)个人
-        for (let j = 0; j < N; j++) //N灯j循环,0到N-1
-        arrayd[j]++
+    for (let j = 1; j <= N; j++) arrayd[j]=0 //数组undefined 到 0
+    // 0初始表示开，1表示关，2表示开，奇数表示关
+    for (let i = 1; i <= M; i++){ //M人i循环,1到M，第i个人
+        for (let j = 1; j <= N; j++) //N灯j循环,1到N
+        if ( j % i == 0 ){
+            arrayd[j]++
+        }
     }
+    // 最后循环console.log把关闭，奇数输出逗号编号
+    let out = "1"
+    for (let j = 2; j <= N; j++){
+        arrayd[j]%2==0? "": out = out +","+j 
+    }
+    console.log(out)
     //先写代码，再优化，从无到有，不要怕累赘
 </script>
 
