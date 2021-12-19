@@ -166,3 +166,18 @@ for (i = 2; i <= 10; i++) {
   x = y;
   z = y;
 }
+
+//yangl
+var N = Number(prompt('灯数'))
+var M = Number(prompt('人数'))
+for (n = 1 ; n <= N ; n ++){ //第n个灯
+  var k = 1
+  for (m = 1 ; m <= M ; m ++){ //第m个人，若灯的编号为这个人的倍数，即
+	if (n % m == 0){
+	  k *= -1
+	}
+  }
+  if (k == -1){
+	alert(n)
+  }
+} 
