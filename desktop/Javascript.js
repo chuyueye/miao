@@ -139,11 +139,11 @@ n = prompt()
 // console.log 里面的所有符号要加引号！！！！
 // + " " +
 
-	// let n = +prompt(),
-	// arr = []
-	// for (let i = 0; i < n; i++) 
-	// arr.push(+prompt())
-	// console.log( (eval(arr.join('+')) / n).toFixed(2) )
+// let n = +prompt(),
+// arr = []
+// for (let i = 0; i < n; i++) 
+// arr.push(+prompt())
+// console.log( (eval(arr.join('+')) / n).toFixed(2) )
 
 // 	No NOT use eval()
 // Executing JavaScript from a string is an BIG security risk.
@@ -203,10 +203,10 @@ console.log(i)
 //这个思路也太乱了而且运行速度慢
 
 // 平方和公式,迭代自己,n正整数
-function sumOfSquare(n){
-	if (n%1!=0 || n<0) {return "Error,need positive integers"}
-	if (n==0){ return 0 }
-	else return (sumOfSquare(n-1) + n*n)
+function sumOfSquare(n) {
+	if (n % 1 != 0 || n < 0) { return "Error,need positive integers" }
+	if (n == 0) { return 0 }
+	else return (sumOfSquare(n - 1) + n * n)
 }
 // return (sumOfSquare(n-1) + n*n)
 // 当n=0在if里面时，等价于 if (false),所以最后
@@ -214,3 +214,63 @@ function sumOfSquare(n){
 // "****"+0 == "****0"
 // if(0) console.log(0)
 // else console.log(1) // if false,1
+
+//https://www.w3resource.com/javascript-exercises/javascript-function-exercise-8.php
+function test_prime1(n) {
+
+	if (n === 1) {
+		return false;
+	}
+	else if (n === 2) {
+		return true;
+	} else {
+		for (let x = 2; x * x <= n; x++) {
+			if (n % x === 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+// new testment
+function test_prime2(n) {
+	// let array = new Array()
+	// array[0] = 0
+	let array = [2, 3, 5, 7] //,11,13,17,19,23
+	if (n === 1) {
+		return false;
+	}
+	else if (n === 2 || n === 3 || n === 5 || n === 7) {
+		return true;
+	} else {
+		// for (let x = 2; x*x <= n; x++) {
+		// 	if (n % x === 0) {
+		// 		return false;
+		// 	}
+		// }
+		// for (let i = 1; i <= array.length - 1; x++) {
+
+		// }
+		// return true;
+	}
+}
+// function newPrimeArray(n)
+// 创建一个质数小于等于n的质数数组
+console.log(test_prime(37));
+
+// function newPrimeArray(n) { // n>=2
+// 	let array = [2]
+// 	if (n = 2) 
+// }
+
+function isPrime(num) {
+	for (var i = 2; i * i <= num; i++)
+		if (num % i === 0) return false;
+	return num > 1;
+}
+function primeArray(n) {
+	let array = []
+	for (let i = 2;i<=n;i++)
+	if (isPrime(i)) { array.push(i) }
+	return array
+}
