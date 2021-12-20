@@ -48,22 +48,22 @@ isPrimeNumber(5)
 
 1215
 
-Presentation Error	62907
-Accepted	58430
-Compile Error	57931
-Wrong Answer	35377
-Runtime Error	704
-Time Limit Exceeded	496
-Output Limit Exceeded	288
-Runtime Error	196
-System Error	52
-Waiting	39
-Memory Limit Exceeded	30
+// Presentation Error	62907
+// Accepted	58430
+// Compile Error	57931
+// Wrong Answer	35377
+// Runtime Error	704
+// Time Limit Exceeded	496
+// Output Limit Exceeded	288
+// Runtime Error	196
+// System Error	52
+// Waiting	39
+// Memory Limit Exceeded	30
 
-Presentation Error
-Runtime Error
-Wrong Answer
-Compile Error
+// Presentation Error
+// Runtime Error
+// Wrong Answer
+// Compile Error
 http://noi.openjudge.cn/ch0101/02/submit/
 
 let a = require('http');
@@ -75,11 +75,11 @@ let b = a.split(" ")
 console.log(b[1])
 
 
-Include Modules
-To include a module, use the require() function with the name of the module:
+// Include Modules
+// To include a module, use the require() function with the name of the module:
 
-var http = require('http');
-Now your application has access to the HTTP module, and is able to create a server:
+// var http = require('http');
+// Now your application has access to the HTTP module, and is able to create a server:
 
 http.createServer(
 	function (req, res) {
@@ -130,14 +130,14 @@ let b = a.split(" ")
 console.log(b[1])
 
 n = prompt()
-a = if (n > 0) 5 else 4
+// a = if (n > 0) 5 else 4
 
-if else , 格式，多重嵌套格式
-if (false) console.log(2)
-console.log(3)
+// if else , 格式，多重嵌套格式
+// if (false) console.log(2)
+// console.log(3)
 
-console.log 里面的所有符号要加引号！！！！
-+ " " +
+// console.log 里面的所有符号要加引号！！！！
+// + " " +
 
 	// let n = +prompt(),
 	// arr = []
@@ -145,12 +145,12 @@ console.log 里面的所有符号要加引号！！！！
 	// arr.push(+prompt())
 	// console.log( (eval(arr.join('+')) / n).toFixed(2) )
 
-	No NOT use eval()
-Executing JavaScript from a string is an BIG security risk.
+// 	No NOT use eval()
+// Executing JavaScript from a string is an BIG security risk.
 
-With eval(), malicious code can run inside your application without permission.
+// With eval(), malicious code can run inside your application without permission.
 
-With eval(), third - party code can see the scope of your application, whitch can lead to possible attacks.
+// With eval(), third - party code can see the scope of your application, whitch can lead to possible attacks.
 //Fibonacci
 var x = 0;
 var y = 1;
@@ -201,3 +201,16 @@ for (i = 1; ; i++) { //i迭代每一个自然数
 }
 console.log(i)
 //这个思路也太乱了而且运行速度慢
+
+// 平方和公式,迭代自己,n正整数
+function sumOfSquare(n){
+	if (n%1!=0 || n<0) {return "Error,need positive integers"}
+	if (n==0){ return 0 }
+	else return (sumOfSquare(n-1) + n*n)
+}
+// return (sumOfSquare(n-1) + n*n)
+// 当n=0在if里面时，等价于 if (false),所以最后
+// return (sumOfSquare(0-1) + 0*0) 
+// "****"+0 == "****0"
+// if(0) console.log(0)
+// else console.log(1) // if false,1
