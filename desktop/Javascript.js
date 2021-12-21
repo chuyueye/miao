@@ -266,7 +266,7 @@ console.log(test_prime(37));
 function isPrime(num) {
 	for (var i = 2; i * i <= num; i++)
 		if (num % i === 0) return false;
-	return num > 1;
+	return num > 1; // 1 时不是素数
 }
 function primeArray(n) {
 	let array = []
@@ -274,9 +274,40 @@ function primeArray(n) {
 		if (isPrime(i)) { array.push(i) }
 	return array
 }
+
 1221
 function factorial(n) {
 	if (n == 1) return 1
-	else return factorial(n-1)*n
+	else return factorial(n - 1) * n
+}
+function qiao7(n) {
+	n = n.toString()
+	if (n % 7 == 0) return true
+	for (i = 0; i < n.length; i++) {
+		if (n[i] == 7) return true
+	}
+	return false
 }
 
+function fibb(n) {
+	// 1,1,2,3,5,8
+	if (n == 1 || n == 2) { return 1 }
+	if (n > 35) { return "error\n n too large! try other function" }
+	return fibb(n - 1) + fibb(n - 2) // n>30 后太慢，cpu吃不消
+	//应该用数组迭代而不是自身迭代
+}
+// "\n" 必须在console.log里面
+function fibonacci(n,y) {
+	// var i;
+	var fib = []; // Initialize array!
+	fib[0] = 0;
+	fib[1] = 1;
+	for (i = 2; i <= n; i++) {
+		// Next fibonacci number = previous + one before previous
+		// Translated to JavaScript:
+		fib[i] = fib[i - 2] + fib[i - 1];
+		// console.log(fib[i]);
+	}
+	if(y=="y") console.log(fib)
+	return fib[n]
+}
