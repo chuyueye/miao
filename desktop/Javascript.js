@@ -270,7 +270,13 @@ function isPrime(num) {
 }
 function primeArray(n) {
 	let array = []
-	for (let i = 2;i<=n;i++)
-	if (isPrime(i)) { array.push(i) }
+	for (let i = 2; i <= n; i++)
+		if (isPrime(i)) { array.push(i) }
 	return array
 }
+1221
+function factorial(n) {
+	if (n == 1) return 1
+	else return factorial(n-1)*n
+}
+
