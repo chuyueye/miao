@@ -336,3 +336,4 @@ for (const element of document.querySelectorAll(selector)) {
 		matchSelectors.push(selector);
 	}
 }
+
