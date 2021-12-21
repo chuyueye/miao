@@ -268,7 +268,7 @@ function isPrime(num) {
 		if (num % i === 0) return false;
 	return num > 1; // 1 时不是素数
 }
-function primeArray(n) { 
+function primeArray(n) {
 	let array = []
 	for (let i = 2; i <= n; i++)
 		if (isPrime(i)) { array.push(i) }
@@ -297,7 +297,7 @@ function fibb(n) {
 	//应该用数组迭代而不是自身迭代
 }
 // "\n" 必须在console.log里面
-function fibonacci(n,y) {
+function fibonacci(n, y) {
 	// var i;
 	var fib = []; // Initialize array!
 	fib[0] = 0;
@@ -308,7 +308,7 @@ function fibonacci(n,y) {
 		fib[i] = fib[i - 2] + fib[i - 1];
 		// console.log(fib[i]);
 	}
-	if(y=="y") console.log(fib)
+	if (y == "y") console.log(fib)
 	return fib[n]
 }
 // 局部绑定覆盖全局绑定
@@ -323,3 +323,16 @@ console.log(a)
 // 2
 // 3
 // 1
+// adblock.fullimg
+{Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document': 'img[class=""fullimg]' is not a valid selector.
+    at HTMLDocument.querySelectorAll (<anonymous>)
+    at chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/adblock-datacollection-contentscript.js:53:42
+	}
+for (const element of document.querySelectorAll(selector)) {
+	// Only consider selectors that actually have an effect on the
+	// computed styles, and aren't overridden by rules with higher
+	// priority, or haven't been circumvented in a different way.
+	if (getComputedStyle(element).display === 'none') {
+		matchSelectors.push(selector);
+	}
+}
