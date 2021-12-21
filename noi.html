@@ -644,16 +644,16 @@ div.$*5    -->
     let k = prompt()
     function fibonacci(n,y) {
 	// var i;
-	var fib = []; // Initialize array!
+	var fib = [];
 	fib[0] = 0;
-	fib[1] = 1;
+	fib[1] = 1; // Initialize array!
 	for (i = 2; i <= n; i++) {
 		// Next fibonacci number = previous + one before previous
 		// Translated to JavaScript:
 		fib[i] = fib[i - 2] + fib[i - 1];
 		// console.log(fib[i]);
 	}
-	if(y=="y") console.log(fib)
+	if(y=="y") console.log(fib) // optional to log array
 	return fib[n]
     }
     console.log(fibonacci(k))

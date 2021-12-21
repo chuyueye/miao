@@ -268,7 +268,7 @@ function isPrime(num) {
 		if (num % i === 0) return false;
 	return num > 1; // 1 时不是素数
 }
-function primeArray(n) {
+function primeArray(n) { 
 	let array = []
 	for (let i = 2; i <= n; i++)
 		if (isPrime(i)) { array.push(i) }
@@ -311,3 +311,15 @@ function fibonacci(n,y) {
 	if(y=="y") console.log(fib)
 	return fib[n]
 }
+// 局部绑定覆盖全局绑定
+let a = 1
+{
+	let a = 2
+	console.log(a)
+	a = 3
+	console.log(a)
+}
+console.log(a)
+// 2
+// 3
+// 1
