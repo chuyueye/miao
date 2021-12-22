@@ -642,33 +642,55 @@ div.$*5    -->
     //     "a"+n+"=Fibonacci"
     // )
     let k = prompt()
-    function fibonacci(n,y) {
-	// var i;
-	var fib = [];
-	fib[0] = 0;
-	fib[1] = 1; // Initialize array!
-	for (i = 2; i <= n; i++) {
-		// Next fibonacci number = previous + one before previous
-		// Translated to JavaScript:
-		fib[i] = fib[i - 2] + fib[i - 1];
-		// console.log(fib[i]);
-	}
-	if(y=="y") console.log(fib) // optional to log array
-	return fib[n]
+    function fibonacci(n, y) {
+        // var i;
+        var fib = [];
+        fib[0] = 0;
+        fib[1] = 1; // Initialize array!
+        for (i = 2; i <= n; i++) {
+            // Next fibonacci number = previous + one before previous
+            // Translated to JavaScript:
+            fib[i] = fib[i - 2] + fib[i - 1];
+            // console.log(fib[i]);
+        }
+        if (y == "y") console.log(fib) // optional to log array
+        return fib[n]
     }
     console.log(fibonacci(k))
 </script>
-
+<!-- 18:鸡尾酒疗法 -->
 <script id="ch0105/18">
-
+    let n = +prompt()
+    let jwjyxl = (1 / prompt()) * prompt() //鸡尾酒有效率，第二行两个prompt
+    for (let i = 0; i < n - 1; i++) { // 1行鸡尾酒，n-1行新疗法
+        let a = prompt() // 病例数
+        let b = prompt() // 有效数
+        if (b / a > jwjyxl + 0.05) { console.log("better") } // 新疗法大于wjjyxl 0.05
+        else if (b / a < jwjyxl - 0.05) { console.log("worse") }
+        else { console.log("same") }
+    }
 </script>
-
+<!-- 救生船从大本营出发，营救若干屋顶上的人回到大本营 -->
 <script id="ch0105/19">
-
+    let n = prompt()
+    let fenzhong = 0 // 总时间-分钟
+    for (let i = 0; i < n; i++) {
+        let zbx = prompt() // 坐标x
+        let zby = prompt()
+        let renshu = prompt()
+        fenzhong = fenzhong + 2 * (zbx ** 2 + zby ** 2) ** (1 / 2) / 50 + 1.5 * renshu
+    }
+    console.log(Math.ceil(fenzhong))
 </script>
-
+<!-- 20:球弹跳高度的计算,每次落地后反跳回原来高度的一半 -->
 <script id="ch0105/20">
-
+    let h = prompt()
+    console.log(
+        -h + 2 * h * (1 - 2 ** (-10)) / (1-2**-1)
+    )
+    console.log(
+        h * (1 / 2) ** 10
+    )
 </script>
 
 <script id="ch0105/21">
@@ -890,7 +912,7 @@ div.$*5    -->
     }
     let array = []
     function primeArray(n) {
-        
+
         for (let i = 2; i <= n; i++)
             if (isPrime(i)) { array.push(i) }
         return array
@@ -898,7 +920,7 @@ div.$*5    -->
     // 需要另外一个函数，第n个质数
     // n/array[array.length-1]
     primeArray(n)
-    console.log(array[array.length-1])
+    console.log(array[array.length - 1])
 </script>
 
 <script id="ch0105/45">
