@@ -888,8 +888,9 @@ div.$*5    -->
             if (num % i === 0) return false;
         return num > 1;
     }
+    let array = []
     function primeArray(n) {
-        let array = []
+        
         for (let i = 2; i <= n; i++)
             if (isPrime(i)) { array.push(i) }
         return array
