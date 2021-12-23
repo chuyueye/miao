@@ -1,3 +1,67 @@
-<script>
-    
+<script id="367. Valid Perfect Square">
+    /**
+ * @param {number} num
+ * @return {boolean}
+ */
+    var isPerfectSquare = function (num) {
+        for (i = 1; i * i < num; i++) {
+
+        }
+        if (i * i == num) { return true }
+        else { return false }
+    }
+</script>
+
+<script id="258. Add Digits">
+    var addDigits = function (num) {
+        let sum
+        if (num <= 9) { return num }
+        while (num > 9) {
+            sum = 0
+            num = num.toString()
+            for (let i = 0; i < num.length; i++) {
+                sum = sum + Number(num[i])
+            }
+            num = sum
+        }
+        return num
+    };
+    // return (num % 9 == 0) ? 9 : num % 9
+    // addDigits(38)
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
 </script>
