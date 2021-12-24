@@ -997,7 +997,9 @@ div.$*5    -->
         }
         return sum == n
     }
-    isNarcissistic(prompt())
+    console.log(
+        isNarcissistic(prompt()) ? "YES" : "NO"
+    )
 </script>
 <!-- narcissistics: 输出10000以内的水仙花数 -->
 <script id="narcissistics">
@@ -1010,7 +1012,8 @@ div.$*5    -->
         return sum == n
     }
     function repeat(n, action) {
-        for (let i = 0; i <= n; i++) {
+        // for (let i = 0; i <= n; i++) { 
+        for (let i = 100; i <= 999; i++) {    //???一万以内还限定三位数干什么
             if (action(i)) { console.log(i) }
         }
     }
@@ -1022,27 +1025,34 @@ div.$*5    -->
     function isPalindrom(n) {
         n = n.toString()  // transfer to Strings
         let shifou = true
-        for (let i = 0; i < n.length / 2; i++){
+        for (let i = 0; i < n.length / 2; i++) {
             shifou = shifou && n[i] == n[n.length - 1 - i]
         }
         return shifou
     }
-    isPalindrom(n)
+    console.log(
+        isPalindrom(n) ? "YES" : "NO"
+    )
     //能否更简单，少创建一个let？
 </script>
 <!-- weekday: 输入年份与月份，输出这个月的第一天是周几（视具体设定，周一可以用1或0表示） -->
 <script id="weekday">
     let nian = prompt()
     let yue = prompt()
-    let date = new Date(nian,yue-1)
+    let date = new Date(nian, yue - 1)
     console.log(
         date.getDay()
     )
-    // I am cheating.
+    // I am cheating. 看视频，基准日期？什么历？
 </script>
 <!-- complete-number: 输入一个数，判断它是否是完全数（自行查相关概念） -->
 <script id="complete-number">
-
+    // 约数
+    function isComplete(n) {
+        for (; ; i++) {
+            n % i == 0
+        }
+    }
 </script>
 
 <script id="">
