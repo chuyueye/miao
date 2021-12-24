@@ -325,19 +325,38 @@ console.log(a)
 // 1
 // adblock.fullimg
 {Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document': 'img[class=""fullimg]' is not a valid selector.
-    at HTMLDocument.querySelectorAll (<anonymous>)
-    at chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/adblock-datacollection-contentscript.js:53:42
+    at HTMLDocument.querySelectorAll(<anonymous>)
+	at chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/adblock-datacollection-contentscript.js:53:42
 	}
-for (const element of document.querySelectorAll(selector)) {
+	for (const element of document.querySelectorAll(selector)) {
 	// Only consider selectors that actually have an effect on the
 	// computed styles, and aren't overridden by rules with higher
 	// priority, or haven't been circumvented in a different way.
 	if (getComputedStyle(element).display === 'none') {
-		matchSelectors.push(selector);
+		matchSelectors.push(selector)
 	}
 }
-//</anonymous>
+//</anonymous>)
+	// 1222
 
-// 1222
+	// 1223
 
-// 1223
+	// 1224
+
+	function fibonacci(n) {
+		let sqrt5 = Math.sqrt(5)
+		let a = (1 + sqrt5) ** n
+		let b = (1 - sqrt5) ** n
+		return (a - b) / sqrt5
+	}
+	fibonacci(5)
+	function repeatConsoleLog(n) {
+		for (let i = 0; i < n; i++){
+			console.log(i)
+		}
+	}
+	repeatConsoleLog(5)
+	function test(n){
+		var x=5
+	}
+	test()
