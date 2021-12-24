@@ -987,7 +987,7 @@ div.$*5    -->
 </script>
 
 
-
+<!-- narcissistic: 输入一个数，判断是否是水仙花数 -->
 <script id="narcissistic">
     function isNarcissistic(n) {
         n = n.toString()
@@ -999,20 +999,49 @@ div.$*5    -->
     }
     isNarcissistic(prompt())
 </script>
-
-<script id="">
-
+<!-- narcissistics: 输出10000以内的水仙花数 -->
+<script id="narcissistics">
+    function isNarcissistic(n) {
+        n = n.toString()
+        let sum = 0
+        for (let i = 0; i < n.length; i++) {
+            sum = sum + n[i] ** n.length
+        }
+        return sum == n
+    }
+    function repeat(n, action) {
+        for (let i = 0; i <= n; i++) {
+            if (action(i)) { console.log(i) }
+        }
+    }
+    repeat(10000, isNarcissistic)
 </script>
-
-<script id="">
-
+<!-- palindrom: 输入一个数，判断它数是否是回文数，如1223221 -->
+<script id="palindrom">
+    let n = prompt()
+    function isPalindrom(n) {
+        n = n.toString()  // transfer to Strings
+        let shifou = true
+        for (let i = 0; i < n.length / 2; i++){
+            shifou = shifou && n[i] == n[n.length - 1 - i]
+        }
+        return shifou
+    }
+    isPalindrom(n)
+    //能否更简单，少创建一个let？
 </script>
-
-<script id="">
-
+<!-- weekday: 输入年份与月份，输出这个月的第一天是周几（视具体设定，周一可以用1或0表示） -->
+<script id="weekday">
+    let nian = prompt()
+    let yue = prompt()
+    let date = new Date(nian,yue-1)
+    console.log(
+        date.getDay()
+    )
+    // I am cheating.
 </script>
-
-<script id="">
+<!-- complete-number: 输入一个数，判断它是否是完全数（自行查相关概念） -->
+<script id="complete-number">
 
 </script>
 
