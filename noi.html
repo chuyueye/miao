@@ -804,14 +804,14 @@ div.$*5    -->
     let n = 0
     while (sn <= k) {
         n++ //第一次后 n==1
-        sn = sn + 1/n
+        sn = sn + 1 / n
     }
     console.log(n)
 </script>
 <!-- 28:分离整数的各个数位 -->
 <script id="ch0105/28">
     let num = prompt
-    for(let i = 0;i<num.length;i++)
+    for (let i = 0; i < num.length; i++)
 </script>
 
 <script id="ch0105/29">
@@ -819,11 +819,11 @@ div.$*5    -->
 </script>
 
 <script id="ch0105/30">
-    // 30:含k个3的数
-    // 输入两个正整数 m 和 k，其中1 < m < 100000，1 < k < 5 
-    // 判断 m 能否被19整除，且恰好含有k个3，
-    // m 和 k 的值，中间用单个空格间隔。
-    let m = prompt()
+        // 30:含k个3的数
+        // 输入两个正整数 m 和 k，其中1 < m < 100000，1 < k < 5 
+        // 判断 m 能否被19整除，且恰好含有k个3，
+        // m 和 k 的值，中间用单个空格间隔。
+        let m = prompt()
     let k = prompt()
     let kge3 = 0 //含有几个3，计数器
     for (let i = 0; i < m.length; i++) {
@@ -988,8 +988,16 @@ div.$*5    -->
 
 
 
-<script id="">
-
+<script id="narcissistic">
+    function isNarcissistic(n) {
+        n = n.toString()
+        let sum = 0
+        for (let i = 0; i < n.length; i++) {
+            sum = sum + n[i] ** n.length
+        }
+        return sum == n
+    }
+    isNarcissistic(prompt())
 </script>
 
 <script id="">
@@ -1037,11 +1045,13 @@ div.$*5    -->
     // }
     // i>1时 差单调递增
     // 二分法算square root
-    function sqrt(n){
+    function sqrt(n) {
         let left = 0
         let right = n
-        let mid = (left + right)/2
-        
+        let mid = (left + right) / 2
+        while (mid * mid) {
+
+        }
     }
     let n = prompt()
     sqrt(n)
