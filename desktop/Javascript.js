@@ -382,3 +382,20 @@ console.log(a)
 	// function sqrtab(a, b) {
 	// 	return a + b / a
 	// }
+
+	// console.clear()
+    // for(let i = 1;i<=50;i=i+1){
+    //     console.log(
+    //         (i+1)/2-Math.sqrt(i)
+    //     )
+    // }
+    // i>1时 差单调递增
+    // 二分法算square root
+    function sqrt(n) {
+        let left = 0
+        let right = n
+        let mid = (left + right) / 2
+        while (mid * mid) {
+
+        }
+    }
