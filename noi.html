@@ -1080,7 +1080,7 @@ div.$*5    -->
 <!-- prime: 输入一个数，判断它是否是素数 -->
 <script id="prime">
     function prime(num) {
-        if (num < 2) return false;
+        if (num < 2 || num % 1 != 0) return false;
         for (let i = 2; i * i <= num; i++) {
             if (num % i == 0) return false
         }
