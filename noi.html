@@ -1057,7 +1057,7 @@ div.$*5    -->
         return sum == n
     }
     console.log(
-        isComplete(prompt())?"YES":"NO"
+        isComplete(prompt()) ? "YES" : "NO"
     )
 </script>
 <!-- complete-numbers: 输出1000以内的完全数 -->
@@ -1071,44 +1071,58 @@ div.$*5    -->
         return sum == n
     }
     function repeat(n, action) {
-        for (let i = 0; i <= n; i++) { 
+        for (let i = 0; i <= n; i++) {
             if (action(i)) { console.log(i) }
         }
     }
-    repeat(1000,isComplete)
+    repeat(1000, isComplete)
 </script>
 <!-- prime: 输入一个数，判断它是否是素数 -->
 <script id="prime">
+    function prime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i * i <= num; i++) {
+            if (num % i == 0) return false
+        }
+        return true
+    }
+    console.log(
+        prime(prompt())
+    )
+</script>
+<!-- primes: 输出100以内的素数 -->
+<script id="primes">
+    let primeArray = [2]
+    function primes(num) {
+        for (let i = 3; i < num; i++) {
+
+        }
+    }
+</script>
+<!-- itoa: 给定一个整数，将其转换为字符串：不能使用String等现成函数，但可以使用非此功能的其它函数，也不能利用任意运算符的自动类型转换 -->
+<script id="itoa">
 
 </script>
-
-<script id="">
-
-</script>
-
-<script id="">
-
-</script>
-
+<!-- lcf&lcm: 输入两个数，输出它们的最大公约数和最小公倍数 -->
 <script id="lcf&lcm">
 
 </script>
 <!-- sqrt: 输入一个数，求它的平方根，精确到小数点后3位，不能使用Math.sqrt -->
 <script id="sqrt">
     function sqrt(n) {
-		let a = 0
-		let b = 0 //n == a*a +b
-		for (i = 0; i * i < n; i++) { }
-		if (i * i == n) { return i }
-		else a = (i - 1), b = n - a * a;
-		// console.log(a, b) // will be used in debug 
-		let sqrt = a + b / a
-		let cishu = 15 // 迭代15次，精度,以后可修改
-		for (let i = 0; i < cishu; i++) {
-			sqrt = a + b / (a + sqrt)
-		}
-		return sqrt		
-	}
+        let a = 0
+        let b = 0 //n == a*a +b
+        for (i = 0; i * i < n; i++) { }
+        if (i * i == n) { return i }
+        else a = (i - 1), b = n - a * a;
+        // console.log(a, b) // will be used in debug 
+        let sqrt = a + b / a
+        let cishu = 15 // 迭代15次，精度,以后可修改
+        for (let i = 0; i < cishu; i++) {
+            sqrt = a + b / (a + sqrt)
+        }
+        return sqrt
+    }
     let n = prompt()
     console.log(
         sqrt(n).toFixed(3)
