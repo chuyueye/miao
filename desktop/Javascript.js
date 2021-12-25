@@ -351,12 +351,23 @@ console.log(a)
 	}
 	fibonacci(5)
 	function repeatConsoleLog(n) {
-		for (let i = 0; i < n; i++){
+		for (let i = 0; i < n; i++) {
 			console.log(i)
 		}
 	}
 	repeatConsoleLog(5)
-	function test(n){
-		var x=5
+	function test(n) {
+		var x = 5
 	}
 	test()
+
+	//1225
+
+	function sqrt(n) {
+		let a = 0
+		let b = 0 //n == a*a +b
+		for (i = 0; i * i < n; i++) { }
+		if (i * i == n) { return true }
+		else a = (i - 1), b = n - a * a;
+		console.log(a,b)
+	}
