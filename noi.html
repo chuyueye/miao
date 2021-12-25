@@ -1090,10 +1090,10 @@ div.$*5    -->
 
 </script>
 
-<script id="">
+<script id="lcf&lcm">
 
 </script>
-
+<!-- sqrt: 输入一个数，求它的平方根，精确到小数点后3位，不能使用Math.sqrt -->
 <script id="sqrt">
     function sqrt(n) {
 		let a = 0
@@ -1110,5 +1110,7 @@ div.$*5    -->
 		return sqrt		
 	}
     let n = prompt()
-    sqrt(n)
+    console.log(
+        sqrt(n).toFixed(3)
+    )
 </script>
