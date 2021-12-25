@@ -370,4 +370,6 @@ console.log(a)
 		if (i * i == n) { return true }
 		else a = (i - 1), b = n - a * a;
 		console.log(a,b)
+		// declare一个递归用函数
+		
 	}
