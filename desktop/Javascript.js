@@ -335,7 +335,7 @@ console.log(a)
 	if (getComputedStyle(element).display === 'none') {
 		matchSelectors.push(selector)
 	}
-}
+}}
 //</anonymous>)
 	// 1222
 
@@ -367,9 +367,18 @@ console.log(a)
 		let a = 0
 		let b = 0 //n == a*a +b
 		for (i = 0; i * i < n; i++) { }
-		if (i * i == n) { return true }
+		if (i * i == n) { return i }
 		else a = (i - 1), b = n - a * a;
-		console.log(a,b)
-		// declare一个递归用函数
-		
+		// console.log(a, b) // will be used in debug 
+		let sqrt = a + b / a
+		let cishu = 15 // 迭代15次，精度,以后可修改
+		for (let i = 0; i < cishu; i++) {
+			sqrt = a + b / (a + sqrt)
+		}
+		return sqrt		
 	}
+	// 递归次数？还是循环？
+	// declare一个递归用函数
+	// function sqrtab(a, b) {
+	// 	return a + b / a
+	// }
