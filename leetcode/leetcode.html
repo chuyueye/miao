@@ -29,9 +29,21 @@
     // return (num % 9 == 0) ? 9 : num % 9
     // addDigits(38)
 </script>
+<!-- Implement pow(x, n), which calculates x raised to the power n (i.e., xn). -->
+<script id="50. Pow(x, n)">
+    function pow(x, n) {      // n > 0&& x > 0
+        if (n == 0) return 1
+        if (n == 1) return x
+        if (n % 2 == 0) {
+            let t = pow(x, n / 2)
+            return t * t
+        }
+        else {
+            let t = pow(x, (n - 1) / 2)
+            return t * t * x
+        }
+    }
 
-<script id="">
-    
 </script>
 
 <script id="">
