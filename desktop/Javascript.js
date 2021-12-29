@@ -375,7 +375,7 @@ console.log(a)
 		for (let i = 0; i < cishu; i++) {
 			sqrt = a + b / (a + sqrt)
 		}
-		return sqrt		
+		return sqrt
 	}
 	// 递归次数？还是循环？
 	// declare一个递归用函数
@@ -384,18 +384,28 @@ console.log(a)
 	// }
 
 	// console.clear()
-    // for(let i = 1;i<=50;i=i+1){
-    //     console.log(
-    //         (i+1)/2-Math.sqrt(i)
-    //     )
-    // }
-    // i>1时 差单调递增
-    // 二分法算square root
-    function sqrt(n) {
-        let left = 0
-        let right = n
-        let mid = (left + right) / 2
-        while (mid * mid) {
+	// for(let i = 1;i<=50;i=i+1){
+	//     console.log(
+	//         (i+1)/2-Math.sqrt(i)
+	//     )
+	// }
+	// i>1时 差单调递增
+	// 二分法算square root
+	function sqrt(n) {
+		let left = 0
+		let right = n
+		let mid = (left + right) / 2
+		while (mid * mid) {
 
-        }
-    }
+		}
+	}
+}
+
+	//1229
+	function indexOf(array, value) {
+		for (let i = 0; i < array.length; i++) {
+			if (array[i] === value)
+				return i
+		}
+		return -1
+	}
