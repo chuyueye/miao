@@ -59,23 +59,30 @@
     };
 </script>
 
-<script id="">
-    // 创建，并由函数return一个小于n的素数数组
-    let array = [2, 3, 5]
-    function primeNumber(num) {
-        while (true) {
-            // for (let i = 0; i < array.length; i++) {
-            for (let entry of array){
-                if (num % entry != 0) return false
+<script id="primeNumberArray">
+    // 创建，并由函数return一个小于num的素数数组
+    function primeNumberArray(num) {
+        let array = [2, 3, 5]
+        if (num < 6) return array
+        // for (let i = 0; i < array.length; i++) {
+        let a = array[array.length - 1]
+        for (i = a; i <= num; i++) {
+            let isPrime = true
+            for (let entry of array) {
+                if (i % entry === 0) isPrime = false // 任意entry整除，不是素数
             }
+            if (isPrime) array.push(i) // i 是素数
         }
+        return array
     }
-    // 小于最大数，则二分法查找素数
+    primeNumberArray(100)
+    // 再写一个基于上述函数的判断函数，小于最大数，则二分法查找素数
+    
 </script>
 
 <script id="">
-    function f(a,b,...c){
-        console.log(a,b,c)
+    function f(a, b, ...c) {
+        console.log(a, b, c)
     }
     f()
 </script>
