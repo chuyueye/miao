@@ -77,7 +77,7 @@
     }
     primeNumberArray(100)
     // 再写一个基于上述函数的判断函数，小于最大数，则二分法查找素数
-    
+
 </script>
 
 <script id="">
@@ -87,8 +87,12 @@
     f()
 </script>
 
-<script id="">
-
+<script id="arraySum">
+    function add(accumulator, a) {
+        return accumulator + a;
+    }
+    const sum = [1, 2, 3].reduce(add, 0); // with initial value to avoid when the array is empty
+    console.log(sum); // 6
 </script>
 
 <script id="">
