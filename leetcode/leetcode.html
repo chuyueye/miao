@@ -95,6 +95,127 @@
     console.log(sum); // 6
 </script>
 
+<script id="arrayMinus">
+    let array1 = []
+    let array2 = []
+    // array1 - array2
+
+</script>
+
+<script id="42. Trapping Rain Water">
+    /**
+ * @param {number[]} height
+ * @return {number}
+ */
+    // Move pointer, single thread
+    var trap = function (height) {
+        let n = height.length
+        if (n === 0 || n == 1 || n == 2) return 0
+        let l = 0
+        let r = n - 1
+        let max_l = height[l] //height[0],left
+        let max_r = height[r] //height[n-1],right
+        let output = 0
+        while (l < r) {
+            if (max_l < max_r) { //i want max_right bigger first
+                output = output + (max_l - height[l])
+                l = l + 1
+                max_l = Math.max(max_l, height[l])
+            }
+            else {
+                output = output + (max_r - height[r])
+                r = r - 1
+                max_r = Math.max(max_r, height[r])
+            }
+        }
+        return output
+    };
+
+    // var trap = function (height) {
+    //     let n = height.length
+    //     if (n == 0 || n == 1 || n == 2) return 0
+    //     let l = 0
+    //     let r = n - 1
+    //     let max_l = height[l] //height[0],left
+    //     let max_r = height[r] //height[n-1],right
+    //     let output = 0
+    //     while (l < r) {
+    //         if (max_l < max_r) { //i want max_right bigger first
+    //             output = output + (max_l - height[l])
+
+    //             max_l = Math.max(max_l, height[l])
+    //         }
+    //         else {
+    //             output = output + (max_r - height[r])
+
+    //             max_r = Math.max(max_r, height[r])
+    //         }
+    //     }
+    //     return output
+    // };
+    var trap = function (height) {
+        const walls = new Array(height.length);
+        let max = 0;
+        for (let i = 0; i < height.length; i++) {
+            walls[i] = max;
+            max = Math.max(max, height[i]);
+        }
+        max = 0;
+        let amount = 0;
+        for (let i = height.length - 1; i >= 0; i--) {
+            amount += Math.max(0,
+                (
+                    Math.min(walls[i], max) - height[i]
+                )
+            );
+            max = Math.max(max, height[i]);
+        }
+        return amount;
+    };
+</script>
+
+<script id="268. Missing Number">
+    /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+    var missingNumber = function (nums) {
+        let n = nums.length;//get the length
+        for (let i = 0; i <= n; i++){
+            
+            return i
+        }
+    };
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
 <script id="">
 
 </script>
