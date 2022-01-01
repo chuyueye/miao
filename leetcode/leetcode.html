@@ -180,12 +180,29 @@
  * @return {number}
  */
     var missingNumber = function (nums) {
-        let n = nums.length;//get the length
-        for (let i = 0; i <= n; i++){
-            
-            return i
+        let n = nums.length;    //get the length
+        for (let i = 0; i <= n; i++) {
+            if (nums.indexOf(i) == -1) return i
         }
     };
+
+    var missingNumber = function (nums) {
+        let n = nums.length;
+        let sum = 0
+        for (let i = 0; i < n; i++) {
+            sum = sum + nums[i]
+        }
+
+        return n * (n + 1) / 2 - sum
+    };
+
+    // var missingNumber = function (nums) {
+    //     let n = nums.length;    //get the length
+    //     function add(accumulator, a) {
+    //         return accumulator + a;
+    //     }
+    //     return (n * (n + 1 / 2)) - nums.reduce(add, 0)
+    // };
 </script>
 
 <script id="">
