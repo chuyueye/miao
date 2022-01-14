@@ -401,11 +401,25 @@ console.log(a)
 	}
 }
 
-	//1229
-	function indexOf(array, value) {
-		for (let i = 0; i < array.length; i++) {
-			if (array[i] === value)
-				return i
-		}
-		return -1
+//1229
+function indexOf(array, value) {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] === value)
+			return i
 	}
+	return -1
+}
+
+// 0114, page 59
+let log = console.log  // shortcut
+
+function repeat(n) {
+	return (action) => {
+		for (let i = 0; i < n; i++){   // i = 0,1,2,3,4
+			action(i)
+		}
+		}
+}                 // get any funcion that do (action) n times
+
+let repeat5 = repeat(5) //get 5 action function
+repeat5(console.log)
