@@ -423,3 +423,10 @@ function repeat(n) {
 
 let repeat5 = repeat(5) //get 5 action function
 repeat5(console.log)
+
+/// 0116
+/// 上述函数修改，对数组foreach
+/// 
+[1,2,3].forEach(()=>!)
+[1,2,3].forEach((f)=>console.log(!f) )
+
