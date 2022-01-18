@@ -430,3 +430,30 @@ repeat5(console.log)
 [1,2,3].forEach(()=>!)
 [1,2,3].forEach((f)=>console.log(!f) )
 
+//0118
+
+let rabbit = {};
+let speak = (line) => {
+	console.log(
+		`The ${this.type} rabbit says ${line}`
+	)
+}
+
+let whiteRabbit = {
+	type:"white",
+	speak
+}
+whiteRabbit.speak("line")
+
+var chuyueye = () => {
+	return {     // an object
+		chunk:chunk
+	}
+}() // auto calling // Uncaught SyntaxError: Unexpected token '('
+
+var chuyueye = function() {
+	return {     // an object
+		chunk:chunk
+	}
+}() // auto calling // Uncaught ReferenceError: chunk is not defined
+
