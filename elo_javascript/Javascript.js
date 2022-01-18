@@ -415,10 +415,10 @@ let log = console.log  // shortcut
 
 function repeat(n) {
 	return (action) => {
-		for (let i = 0; i < n; i++){   // i = 0,1,2,3,4
+		for (let i = 0; i < n; i++) {   // i = 0,1,2,3,4
 			action(i)
 		}
-		}
+	}
 }                 // get any funcion that do (action) n times
 
 let repeat5 = repeat(5) //get 5 action function
@@ -427,8 +427,8 @@ repeat5(console.log)
 /// 0116
 /// 上述函数修改，对数组foreach
 /// 
-[1,2,3].forEach(()=>!)
-[1,2,3].forEach((f)=>console.log(!f) )
+[1, 2, 3].forEach(() => !)
+[1, 2, 3].forEach((f) => console.log(!f))
 
 //0118
 
@@ -440,20 +440,28 @@ let speak = (line) => {
 }
 
 let whiteRabbit = {
-	type:"white",
+	type: "white",
 	speak
 }
 whiteRabbit.speak("line")
 
 var chuyueye = () => {
 	return {     // an object
-		chunk:chunk
+		chunk: chunk
 	}
 }() // auto calling // Uncaught SyntaxError: Unexpected token '('
 
-var chuyueye = function() {
+var chuyueye = function () {
 	return {     // an object
-		chunk:chunk
+		chunk: chunk
 	}
 }() // auto calling // Uncaught ReferenceError: chunk is not defined
 
+function fun(n, o) {
+	console.log(o)
+	return {
+		fun: function (m) {
+			return fun(m, n);
+		}
+	}
+}
