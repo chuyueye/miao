@@ -1,12 +1,15 @@
-
-
-let chuyueye = {
-
-    
-}
-
 /**
  * 
  * 
  * @param 
  */
+
+let chuyueye = function(){
+    return {
+
+    }
+}()
+
+
+
+
