@@ -465,3 +465,69 @@ function fun(n, o) {
 		}
 	}
 }
+
+//0122
+
+str = `num,name,score
+1,张三,78
+2,李四,89
+3,五王,87
+4,赵六,67`
+
+let parseCsv = (csvStr) => {
+	let lines = csvStr.split('\n')
+	let firstline = lines.shift()
+
+	let headers = firstline.split(',')
+	console.log(lines, firstline, headers)
+	var result = []
+}
+parseCsv(str)
+
+
+let str = "ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=a&oq=a&rsv_pq=a13403160011dc53&rsv_t=657fAJtWz8DZmrjd%2B8iYlErIdH9hvBPAfcphH0J0oklAsHi6Tkj4iB2z6eY&rqlang=cn&rsv_dl=tb&rsv_enter=1&rsv_sug2=0&rsv_btype=t&inputT=414&rsv_sug4=414"
+
+let parseBaiduUrl = function (srt) {
+	let pairs = srt.split('&')
+	let obj = {}
+	pairs.forEach(
+		function (pair) {
+			let parts = pair.split('=')
+			// let key = parts[0]
+			// let value = parts[1]
+			// obj[key] = value
+			obj[parts[0]] = parts[1]
+		}
+	)
+	return obj
+}(str)
+
+{
+	"ie": "utf-8",
+		"f": "8",
+			"rsv_bp": "1",
+				"tn": "baidu",
+					"wd": "a",
+						"oq": "a",
+							"rsv_pq": "a13403160011dc53",
+								"rsv_t": "657fAJtWz8DZmrjd%2B8iYlErIdH9hvBPAfcphH0J0oklAsHi6Tkj4iB2z6eY",
+									"rqlang": "cn",
+										"rsv_dl": "tb",
+											"rsv_enter": "1",
+												"rsv_sug2": "0",
+													"rsv_btype": "t",
+														"inputT": "414",
+															"rsv_sug4": "414"
+}
+
+let f = function() {
+	return function () {
+
+		return function () {
+
+
+			return 2
+		}
+	}
+}
+f()()()
