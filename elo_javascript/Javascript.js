@@ -531,3 +531,26 @@ let f = function() {
 	}
 }
 f()()()
+
+// 0123
+
+	function qw(aa,bb){
+		console.log(aa);
+		console.log(bb)
+	}
+	qw(,1)
+	// Uncaught SyntaxError: Unexpected token ','
+
+	let dog = {
+		name:"旺财",
+		sayName(){
+			console.log("我是"+this.name)
+		}
+	}
+	dog.sayName()
+	let cat = {
+		name:"miaomiao",
+
+	}
+	let cat.sayName = dog.sayName
+	cat.sayName()
