@@ -520,7 +520,7 @@ let parseBaiduUrl = function (srt) {
 															"rsv_sug4": "414"
 }
 
-let f = function() {
+let f = function () {
 	return function () {
 
 		return function () {
@@ -534,23 +534,55 @@ f()()()
 
 // 0123
 
-	function qw(aa,bb){
-		console.log(aa);
-		console.log(bb)
-	}
-	qw(,1)
-	// Uncaught SyntaxError: Unexpected token ','
+function qw(aa, bb) {
+	console.log(aa);
+	console.log(bb)
+}
+qw(, 1)
+// Uncaught SyntaxError: Unexpected token ','
 
-	let dog = {
-		name:"旺财",
-		sayName(){
-			console.log("我是"+this.name)
+let dog = {
+	name: "旺财",
+	sayName() {
+		console.log("我是" + this.name)
+	}
+}
+dog.sayName()
+let cat = {
+	name: "miaomiao",
+
+}
+cat.sayName = dog.sayName
+cat.sayName()
+
+let fun = dog.sayName.bind(cat)
+
+// 0124
+function filter(array, test) {
+	let passed = [];
+	for (let element of array) {
+		if (test(element)) {          // test() IS TRUE
+			passed.push(element);
 		}
 	}
-	dog.sayName()
-	let cat = {
-		name:"miaomiao",
+	return passed;
+}
 
+SCRIPTS.filter(s => s.direction == "ttb");
+SCRIPTS.filter(s => s.living);
+
+function map(array, transform) {
+	let mapped = [];
+	for (let element of array) {
+		mapped.push(transform(element));
 	}
-	let cat.sayName = dog.sayName
-	cat.sayName()
+	return mapped;
+}
+
+let rtlScripts = SCRIPTS.filter(s => s.direction == "rtl");
+console.log(map(rtlScripts, s => s.name));
+// → ["Adlam", "Arabic", "Imperial Aramaic", …]
+
+map(SCRIPTS.filter(s => !s.living), s => s.name);
+SCRIPTS.filter(s=> !s.living).map(s=>s.name);
+
