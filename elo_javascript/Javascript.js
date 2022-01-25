@@ -586,3 +586,133 @@ console.log(map(rtlScripts, s => s.name));
 map(SCRIPTS.filter(s => !s.living), s => s.name);
 SCRIPTS.filter(s=> !s.living).map(s=>s.name);
 
+// 0125
+
+
+
+
+class HashTable2 {
+
+    constructor() {
+      this.mapKeys = Array(32)
+      this.mapVals = Array(32)
+    }
+
+    // 通过映射的key计算出一个整数
+    // 期望的目标是对不同的字符串都计算出不同的值
+    hashCode(key) {
+      var hash = 131313131
+      var seed = 131
+      for (var i = 0; i < key.length; i++) {
+        hash = (((hash * seed) >>> 0) + key.charCodeAt(i)) >>> 0
+      }
+      return hash % this.mapKeys.length
+    }
+    set(key, val) {
+      var idx = this.hashCode(key)
+      this.mapKeys[idx] = key
+      this.mapVals[idx] = val
+      return this
+    }
+    get(key) {
+      var idx = this.hashCode(key)
+      return this.mapVals[idx]
+    }
+    has(key) {
+      var idx = this.hashCode(key)
+      if (this.mapKeys[idx] !== undefined) {
+        return true
+      } else {
+        return false
+      }
+    }
+    delete(key) {
+      var idx = this.hashCode(key)
+      delete this.mapKeys[idx]
+      delete this.mapVals[idx]
+    }
+  }
+
+
+  class HashTable {
+    constructor() {
+      this.maps = Array(32).fill(null)
+    }
+
+    // 通过映射的key计算出一个整数
+    // 期望的目标是对不同的字符串都计算出不同的值
+    hashCode(key) {
+      var hash = 131313131
+      var seed = 131
+      for (var i = 0; i < key.length; i++) {
+        hash = (((hash * seed) >>> 0) + key.charCodeAt(i)) >>> 0
+      }
+      return hash % this.maps.length
+    }
+    set(key, val) {
+      var idx = this.hashCode(key)
+      if (this.maps[idx] === null) {
+        var node = {
+          key: key,
+          val: val,
+          next: null,
+        }
+        this.maps[idx] = node
+      } else {
+        var p = this.maps[idx]
+        while (p) {
+          if (p.key === key) {
+            p.val = val
+            return this
+          }
+          p = p.next
+        }
+        var node = {
+          key: key,
+          val: val,
+          next: this.maps[idx],
+        }
+        this.maps[idx] = node
+      }
+      return this
+    }
+    get(key) {
+      var idx = this.hashCode(key)
+      var p = this.maps[idx]
+      while(p) {
+        if (p.key === key) {
+          return p.val
+        }
+        p = p.next
+      }
+      return undefined
+    }
+    has(key) {
+      var idx = this.hashCode(key)
+      var p = this.maps[idx]
+      while(p) {
+        if (p.key === key) {
+          return true
+        }
+        p = p.next
+      }
+      return false
+    }
+    delete(key) {
+      var idx = this.hashCode(key)
+      var p = this.maps[idx]
+      if (p.key === key) {
+        this.maps[idx] = p.next
+        return this
+      }
+      while(p.next) {
+        if (p.next.key == key) {
+          p.next = p.next.next
+          break
+        }
+        p = p.next
+      }
+      return this
+    }
+  }
+
