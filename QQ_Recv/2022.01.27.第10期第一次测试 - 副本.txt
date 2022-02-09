@@ -1,12 +1,5 @@
 01. 列出至少 7 个常用 Linux 命令及其基本使用方法
 ```
-ls:list files,
-cd:change directory,
-pwd:print work direcory,
-mkdir:make directory,
-rmdir:remove directory,
-cp:copy file,
-rm:remove
 
 ```
 02. 什么是 html 实体？常见 html 实体有哪些？
@@ -174,7 +167,7 @@ rm:remove
   div[title] {}
   fieldset legend + input {}
   #some #thing .not:hover .abc:hover {}
-  ```
+    ```
 
 33. `em,px,rem,vw,vh` 分别代表多长？
 ```
@@ -226,7 +219,7 @@ rm:remove
 ```
     ```
     p,h1,{
-    
+
         background-color: rgba:(abc)
         font-varient; abc;
         colr: #ff048;
@@ -322,10 +315,10 @@ rm:remove
 ```
     ```md
     ## 四季变换
-    
+
     一年有四季，
     四季有其对应的节气
-    
+
     * 春
         - 立春
         - 惊蛰
@@ -341,9 +334,9 @@ rm:remove
             + 打雪仗了
         - 来暖气了
         - 开空调了
-    
+
     > 知识就是力量，法国就是培根。
-    
+
     [春](http://baike.baidu.com/item/%E6%98%A5/6983693)
     ![春](https://www.google.com.hk/images/nav_logo242_hr.png)
     ```
@@ -451,7 +444,7 @@ rm:remove
 ```
 
     标签：html,div,p,a,em,tr,th,td,col,ul,ol,li,dl,dt,dd,pre,nav
-    
+
     属性：coord,rect,poly,href,src
 
 60. 请说出你对命令行程序的理解，以及其与 GUI 程序的区别
@@ -493,16 +486,16 @@ rm:remove
           width: 300px;
           background-color: tan;
         }
-    
+
         .a {
           display: inline-block;
         }
-    
+
         .b {
           font-size: 30px;
           vertical-align: 15px;
         }
-    
+
         .c {
           display: inline-block;
           width: 60px;
@@ -510,7 +503,7 @@ rm:remove
           background-color: pink;
           margin: 8px;
         }
-    
+
         img {
           box-sizing: border-box;
           width: 50px;
@@ -719,7 +712,7 @@ rm:remove
           border: 1px dotted;
           background-color: pink;
         }
-    
+
         .a {
           vertical-align: -15px;
           width: 30px;
@@ -975,7 +968,7 @@ rm:remove
 ```
 
     ![formule](https://wikimedia.org/api/rest_v1/media/math/render/svg/467cf813e1be327172fa6def9ed61afb54f37f19)
-    
+
     * 用 `sigma(s,e,f)` 函数表示函数 `f(x)` 在 `x` 从 `s` 到 `e` 范围的和：
         * 即如果 `f(x) = x*x` ，则 `sigma(1,10,f)` 将得到 1 到 10 的平方和
     * 用 `factorial(x)` 表示 `x` 的阶乘
@@ -983,7 +976,7 @@ rm:remove
     * 用 `division(x,y)` 表示 `x` 除以 `y`（`x/y`）
     * 用 `add(x,y)` 表示 `x` 加 `y`
     * 用 `mul(x,y)` 表示 `x` 乘以 `y`
-    
+
     例如等差数列前 n 项和的公式可以表达为如下形式 `division(mul(n,add(n,1)),2)`
 17. 如下代码中，div 元素设置了多列布局，如何让 h2 标签跨越多列显示？
 ```
@@ -994,20 +987,20 @@ rm:remove
         <h2>Lorem ipsum dolor sit amet.</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing 18. Mollitia, 19. Harum atque quaerat recusandae quibusdam.</p>
         ```
-    
+
         ```
         ```
-    
+
         ```
         <p>Aliquid unde perferendis illo consectetur, magni corporis placeat, impedit ullam minus illum 20. Expedita, ipsa!</p>
         ```
-    
+
         ```
         <p>Expedita, magni sed accusantium quaerat mollitia doloribus, cum! Possimus nostrum ratione autem aut, laborum doloremque!</p>
         <h2>Lorem ipsum dolor sit amet, consectetur.</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing 21. Cupiditate adipisci, esse? Cupiditate?</p>
         ```
-    
+
         ```
         <p>Mollitia doloribus nihil dolor ipsam ab, nesciunt cupiditate, aut iste aspernatur reprehenderit.</p>
         <p>Veniam necessitatibus, doloremque iusto eveniet nisi illo! Excepturi facilis autem similique tempore!</p>
@@ -1164,11 +1157,11 @@ rm:remove
     var x = (5 + 8 *( 9+2(4+5*(2*5(3(4+0)*7)%2)/2)*4.5)/9，
     var y = foobar
     var fruit = 'apple'
-    
+
     for (var i = 0; i<10, i++) {
       console.log(i)
     }
-    
+
     if (x => 25) {
       console.log(3)
     } else if (x =< 30) {
@@ -1279,10 +1272,10 @@ rm:remove
 ```
     ```js
     var primeList = [2,3,5,7,11,13,17,19,23]
-    
+
     function isPrime(n) {
         var sn = Math.sqrt(n)
-    
+
     for(var i = 0; primeList[i] <= sn; i++) {
         if (n % primeList[i] === 0) {
   return false
@@ -1453,7 +1446,7 @@ rm:remove
     var f = function(x) {
         return x * x
     }
-    
+
     function g(x) {
         return x * x * x
     }
@@ -1488,7 +1481,7 @@ rm:remove
          按顺序输出每一步应该如何操作，console.log('请将x号杆最上面的塔移到y号杆')
       */
       function hanoi(n = 6, from = 1, to = 3) {
-    
+
       }
     ```
 78. 如下表达式的求值结果是多少？
@@ -1544,7 +1537,7 @@ rm:remove
         c.radix = 16
         console.log(c.radix)
     }
-    
+
     var company = {
         name: 'xiaomi'
     }
@@ -1571,7 +1564,7 @@ rm:remove
         }
         return o
     }
-    
+
     var b = foo()
     b.baar = function() {
         console.log(a)
@@ -1603,7 +1596,7 @@ rm:remove
     ```js
     [3,5,2,7,8,1,4,9]
     .reduce(function(memo, value, index, array){
-    
+
     })
     ```
 
@@ -1624,7 +1617,7 @@ rm:remove
     var dm = [4, 4, 5, 2, 4, 1, 0, 0, 3, 5, 0]
     var 月租金 = [1,2,3,4,5,6,7,8,9,10].filter(isNotPrime).reduce((a,b)=>a*b, 1.5)
     var 房东电话 = dm.map(i => td[i]).reverse().join()
-    
+
     // 注：相关真实事件地址：http://www.phpjyz.com/article-1065.html
     ```
 92. 高阶函数的定义是什么？它能给编程人员带来什么便利/好处？
@@ -1639,17 +1632,17 @@ rm:remove
     var foo = function(){
         return 9
     }
-    
+
     var obj = {
         foo: function(){
             return 8
         }
     }
-    
+
     function bar(f) {
         console.log(f())
     }
-    
+
     bar(obj.foo)
     ```
 
