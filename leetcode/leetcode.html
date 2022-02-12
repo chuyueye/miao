@@ -231,16 +231,30 @@
      * @return {number[]}
      */
     var twoSum = function (nums, target) {
-
-        for (let entry of nums) {
+        while (true) {
             let c = target - nums[0];
             nums.pop();
             if (nums.includes(c)) {
-                return [indexOf(entry), indexOf(c)]
+                return [nums.indexOf(entry), nums.indexOf(c)]
             }
         }
 
     };
+
+    function twoSum(nums, target) {
+        let vals = {};
+
+        for (let i = 0; i < nums.length; i++) {
+            if (target - nums[i] in vals) {
+                return [vals[target - nums[i]], i];
+            } else {
+                vals[nums[i]] = i;
+            }
+        }
+        return [];
+    };
+
+    twoSum([2, 7, 11, 15], 9)
 </script>
 
 <script id="">
