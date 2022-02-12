@@ -224,8 +224,23 @@
     };
 </script>
 
-<script id="">
+<script id="1. Two Sum">
+    /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number[]}
+     */
+    var twoSum = function (nums, target) {
 
+        for (let entry of nums) {
+            let c = target - nums[0];
+            nums.pop();
+            if (nums.includes(c)) {
+                return [indexOf(entry), indexOf(c)]
+            }
+        }
+
+    };
 </script>
 
 <script id="">
