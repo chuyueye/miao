@@ -747,3 +747,10 @@ describe("validatePIN", function() {
 	  Test.assertEquals(validatePIN("090909"),true, "Wrong output for '090909'");
 	});
   });
+
+  //0218
+  re = /fo((.(.))(..))/d
+  re.exec('abfoabcdefg')
+
+
+  
