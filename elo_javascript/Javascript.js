@@ -749,8 +749,10 @@ describe("validatePIN", function() {
   });
 
   //0218
-  re = /fo((.(.))(..))/d
-  re.exec('abfoabcdefg')
+  let re = /fo((.(.))(..))/d
+  let reabfo = re.exec('abfoabcdefg')
 
 
-  
+// 0220
+
+
