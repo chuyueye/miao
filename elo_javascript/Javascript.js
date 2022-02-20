@@ -584,7 +584,7 @@ console.log(map(rtlScripts, s => s.name));
 // → ["Adlam", "Arabic", "Imperial Aramaic", …]
 
 map(SCRIPTS.filter(s => !s.living), s => s.name);
-SCRIPTS.filter(s=> !s.living).map(s=>s.name);
+SCRIPTS.filter(s => !s.living).map(s => s.name);
 
 // 0125
 
@@ -593,166 +593,183 @@ SCRIPTS.filter(s=> !s.living).map(s=>s.name);
 
 class HashTable2 {
 
-    constructor() {
-      this.mapKeys = Array(32)
-      this.mapVals = Array(32)
-    }
+	constructor() {
+		this.mapKeys = Array(32)
+		this.mapVals = Array(32)
+	}
 
-    // 通过映射的key计算出一个整数
-    // 期望的目标是对不同的字符串都计算出不同的值
-    hashCode(key) {
-      var hash = 131313131
-      var seed = 131
-      for (var i = 0; i < key.length; i++) {
-        hash = (((hash * seed) >>> 0) + key.charCodeAt(i)) >>> 0
-      }
-      return hash % this.mapKeys.length
-    }
-    set(key, val) {
-      var idx = this.hashCode(key)
-      this.mapKeys[idx] = key
-      this.mapVals[idx] = val
-      return this
-    }
-    get(key) {
-      var idx = this.hashCode(key)
-      return this.mapVals[idx]
-    }
-    has(key) {
-      var idx = this.hashCode(key)
-      if (this.mapKeys[idx] !== undefined) {
-        return true
-      } else {
-        return false
-      }
-    }
-    delete(key) {
-      var idx = this.hashCode(key)
-      delete this.mapKeys[idx]
-      delete this.mapVals[idx]
-    }
-  }
+	// 通过映射的key计算出一个整数
+	// 期望的目标是对不同的字符串都计算出不同的值
+	hashCode(key) {
+		var hash = 131313131
+		var seed = 131
+		for (var i = 0; i < key.length; i++) {
+			hash = (((hash * seed) >>> 0) + key.charCodeAt(i)) >>> 0
+		}
+		return hash % this.mapKeys.length
+	}
+	set(key, val) {
+		var idx = this.hashCode(key)
+		this.mapKeys[idx] = key
+		this.mapVals[idx] = val
+		return this
+	}
+	get(key) {
+		var idx = this.hashCode(key)
+		return this.mapVals[idx]
+	}
+	has(key) {
+		var idx = this.hashCode(key)
+		if (this.mapKeys[idx] !== undefined) {
+			return true
+		} else {
+			return false
+		}
+	}
+	delete(key) {
+		var idx = this.hashCode(key)
+		delete this.mapKeys[idx]
+		delete this.mapVals[idx]
+	}
+}
 
 
-  class HashTable {
-    constructor() {
-      this.maps = Array(32).fill(null)
-    }
+class HashTable {
+	constructor() {
+		this.maps = Array(32).fill(null)
+	}
 
-    // 通过映射的key计算出一个整数
-    // 期望的目标是对不同的字符串都计算出不同的值
-    hashCode(key) {
-      var hash = 131313131
-      var seed = 131
-      for (var i = 0; i < key.length; i++) {
-        hash = (((hash * seed) >>> 0) + key.charCodeAt(i)) >>> 0
-      }
-      return hash % this.maps.length
-    }
-    set(key, val) {
-      var idx = this.hashCode(key)
-      if (this.maps[idx] === null) {
-        var node = {
-          key: key,
-          val: val,
-          next: null,
-        }
-        this.maps[idx] = node
-      } else {
-        var p = this.maps[idx]
-        while (p) {
-          if (p.key === key) {
-            p.val = val
-            return this
-          }
-          p = p.next
-        }
-        var node = {
-          key: key,
-          val: val,
-          next: this.maps[idx],
-        }
-        this.maps[idx] = node
-      }
-      return this
-    }
-    get(key) {
-      var idx = this.hashCode(key)
-      var p = this.maps[idx]
-      while(p) {
-        if (p.key === key) {
-          return p.val
-        }
-        p = p.next
-      }
-      return undefined
-    }
-    has(key) {
-      var idx = this.hashCode(key)
-      var p = this.maps[idx]
-      while(p) {
-        if (p.key === key) {
-          return true
-        }
-        p = p.next
-      }
-      return false
-    }
-    delete(key) {
-      var idx = this.hashCode(key)
-      var p = this.maps[idx]
-      if (p.key === key) {
-        this.maps[idx] = p.next
-        return this
-      }
-      while(p.next) {
-        if (p.next.key == key) {
-          p.next = p.next.next
-          break
-        }
-        p = p.next
-      }
-      return this
-    }
-  }
+	// 通过映射的key计算出一个整数
+	// 期望的目标是对不同的字符串都计算出不同的值
+	hashCode(key) {
+		var hash = 131313131
+		var seed = 131
+		for (var i = 0; i < key.length; i++) {
+			hash = (((hash * seed) >>> 0) + key.charCodeAt(i)) >>> 0
+		}
+		return hash % this.maps.length
+	}
+	set(key, val) {
+		var idx = this.hashCode(key)
+		if (this.maps[idx] === null) {
+			var node = {
+				key: key,
+				val: val,
+				next: null,
+			}
+			this.maps[idx] = node
+		} else {
+			var p = this.maps[idx]
+			while (p) {
+				if (p.key === key) {
+					p.val = val
+					return this
+				}
+				p = p.next
+			}
+			var node = {
+				key: key,
+				val: val,
+				next: this.maps[idx],
+			}
+			this.maps[idx] = node
+		}
+		return this
+	}
+	get(key) {
+		var idx = this.hashCode(key)
+		var p = this.maps[idx]
+		while (p) {
+			if (p.key === key) {
+				return p.val
+			}
+			p = p.next
+		}
+		return undefined
+	}
+	has(key) {
+		var idx = this.hashCode(key)
+		var p = this.maps[idx]
+		while (p) {
+			if (p.key === key) {
+				return true
+			}
+			p = p.next
+		}
+		return false
+	}
+	delete(key) {
+		var idx = this.hashCode(key)
+		var p = this.maps[idx]
+		if (p.key === key) {
+			this.maps[idx] = p.next
+			return this
+		}
+		while (p.next) {
+			if (p.next.key == key) {
+				p.next = p.next.next
+				break
+			}
+			p = p.next
+		}
+		return this
+	}
+}
 
 // 0214
 
-describe("validatePIN", function() {
-	it("should return False for pins with length other than 4 or 6", function() {
-	  Test.assertEquals(validatePIN("1"),false, "Wrong output for '1'")
-	  Test.assertEquals(validatePIN("12"),false, "Wrong output for '12'")
-	  Test.assertEquals(validatePIN("123"),false, "Wrong output for '123'")
-	  Test.assertEquals(validatePIN("12345"),false, "Wrong output for '12345'")
-	  Test.assertEquals(validatePIN("1234567"),false, "Wrong output for '1234567'")
-	  Test.assertEquals(validatePIN("-1234"),false, "Wrong output for '-1234'")
-	  Test.assertEquals(validatePIN("1.234"),false, "Wrong output for '1.234'")
-	  Test.assertEquals(validatePIN("-1.234"),false, "Wrong output for '-1.234'")
-	  Test.assertEquals(validatePIN("00000000"),false, "Wrong output for '00000000'")
+describe("validatePIN", function () {
+	it("should return False for pins with length other than 4 or 6", function () {
+		Test.assertEquals(validatePIN("1"), false, "Wrong output for '1'")
+		Test.assertEquals(validatePIN("12"), false, "Wrong output for '12'")
+		Test.assertEquals(validatePIN("123"), false, "Wrong output for '123'")
+		Test.assertEquals(validatePIN("12345"), false, "Wrong output for '12345'")
+		Test.assertEquals(validatePIN("1234567"), false, "Wrong output for '1234567'")
+		Test.assertEquals(validatePIN("-1234"), false, "Wrong output for '-1234'")
+		Test.assertEquals(validatePIN("1.234"), false, "Wrong output for '1.234'")
+		Test.assertEquals(validatePIN("-1.234"), false, "Wrong output for '-1.234'")
+		Test.assertEquals(validatePIN("00000000"), false, "Wrong output for '00000000'")
 	});
-	
-	it("should return False for pins which contain characters other than digits", function() {
-	  Test.assertEquals(validatePIN("a234"),false, "Wrong output for 'a234'")
-	  Test.assertEquals(validatePIN(".234"),false, "Wrong output for '.234'")
-	});
-	
-	it("should return True for valid pins", function() {
-	  Test.assertEquals(validatePIN("1234"),true, "Wrong output for '1234'");
-	  Test.assertEquals(validatePIN("0000"),true, "Wrong output for '0000'");
-	  Test.assertEquals(validatePIN("1111"),true, "Wrong output for '1111'");
-	  Test.assertEquals(validatePIN("123456"),true, "Wrong output for '123456'");
-	  Test.assertEquals(validatePIN("098765"),true, "Wrong output for '098765'");
-	  Test.assertEquals(validatePIN("000000"),true, "Wrong output for '000000'");
-	  Test.assertEquals(validatePIN("123456"),true, "Wrong output for '123456'");
-	  Test.assertEquals(validatePIN("090909"),true, "Wrong output for '090909'");
-	});
-  });
 
-  //0218
-  let re = /fo((.(.))(..))/d
-  let reabfo = re.exec('abfoabcdefg')
+	it("should return False for pins which contain characters other than digits", function () {
+		Test.assertEquals(validatePIN("a234"), false, "Wrong output for 'a234'")
+		Test.assertEquals(validatePIN(".234"), false, "Wrong output for '.234'")
+	});
+
+	it("should return True for valid pins", function () {
+		Test.assertEquals(validatePIN("1234"), true, "Wrong output for '1234'");
+		Test.assertEquals(validatePIN("0000"), true, "Wrong output for '0000'");
+		Test.assertEquals(validatePIN("1111"), true, "Wrong output for '1111'");
+		Test.assertEquals(validatePIN("123456"), true, "Wrong output for '123456'");
+		Test.assertEquals(validatePIN("098765"), true, "Wrong output for '098765'");
+		Test.assertEquals(validatePIN("000000"), true, "Wrong output for '000000'");
+		Test.assertEquals(validatePIN("123456"), true, "Wrong output for '123456'");
+		Test.assertEquals(validatePIN("090909"), true, "Wrong output for '090909'");
+	});
+});
+
+//0218
+let re = /fo((.(.))(..))/d
+let reabfo = re.exec('abfoabcdefg')
 
 
 // 0220
+setTimeout(
+	function () {
+		alert('Time');          // 把函数引用(函数表达式)传给函数
+	}, 1000
+)
+
+setTimeout(alert('Time'), 1000) // 不能把函数调用传给函数。
+
+function setTimer(doneMessage, n) {
+	setTimeout(() => {
+		alert(doneMessage)
+	}, n);
+	doneMessage = 'Ouch'
+}
+setTimer('Cookies are done!',1000)
+
+
 
 
