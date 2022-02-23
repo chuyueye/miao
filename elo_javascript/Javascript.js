@@ -770,6 +770,16 @@ function setTimer(doneMessage, n) {
 }
 setTimer('Cookies are done!',1000)
 
+function setTimer(doneMessage, n) {
+	
+		alert(doneMessage);
+
+	doneMessage = 'Ouch'
+}
+setTimer('Cookies are done!',1000)
+
+
+
 
 
 
