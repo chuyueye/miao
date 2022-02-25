@@ -1,0 +1,230 @@
+链表：
+难查找（必须通过头部顺着链表的指针找到目标结点）
+易增删（只需要调整修改位置的结点指针）
+使用一小段一小段的内存，需要多少用多少
+
+数组：
+易查找（通过下标直接就找到某一项）
+难增删（增删位置后续的元素都要挪动位置）
+使用连续的内存，而且长度一般不能变
+<script>
+  var node = {
+    val: 2,
+    next: null
+  }
+
+  function arrayToList(array) {
+    if (array.length == 0) {
+      return null
+    }
+
+    var nodes = []
+    for (var i = 0; i < array.length; i++) {
+      // 对于数组中的每个值，创建一个链表结点
+      var node = {
+        val: array[i],
+        next: null,
+      }
+      nodes.push(node)
+    }
+
+    for (var i = 0; i < nodes.length - 1; i++) {
+      // 把每个结点的next指向其后续的结点
+      nodes[i].next = nodes[i + 1]
+    }
+
+    return nodes[0]
+  }
+
+  function arrayToList2(array) {
+    if (array.length == 0) {
+      return null
+    }
+
+    var head = {
+      val: array[0],
+      next: null
+    }
+    var prev = head
+
+    for (var i = 1; i < array.length; i++) {
+      var node = {
+        val: array[i],
+        next: null
+      }
+      prev.next = node
+      prev = node
+    }
+
+    return head
+  }
+
+  function arrayToList3(array) {
+    var dummy = {
+      val: 0,
+      next: null
+    }
+    var prev = dummy
+
+    for (var i = 0; i < array.length; i++) {
+      var node = {
+        val: array[i],
+        next: null
+      }
+      prev.next = node
+      prev = node
+    }
+
+    return dummy.next
+  }
+  function arrayToList4(array) {
+    var prev = null
+    for (var i = array.length - 1; i >= 0; i--) {
+      var node = {
+        val: array[i],
+        next: null
+      }
+      node.next = prev
+      prev = node
+    }
+
+    return prev
+  }
+
+  function arrayToListR(array) {
+    if (array.length == 0) {
+      return null
+    }
+    var head = {
+      val: array[0],
+      next: null
+    }
+    var tail = arrayToListR(array.slice(1))
+    head.next = tail
+    return head
+  }
+
+  // 将数组array从start开始到结束转为链表
+  function arrayToListR2(array, start = 0) {
+    if (start == array.length) {
+      return null
+    }
+    var head = new ListNode(array[start])
+    var tail = arrayToListR2(array, start + 1)
+    head.next = tail
+    return head
+  }
+
+
+  function listToArray(head) {
+    if (head == null) {
+      return []
+    }
+
+    var result = []
+
+    while (head) {
+      result.push(head.val)
+      head = head.next
+    }
+
+    return result
+  }
+
+  function listToArrayR(head) {
+    if (head == null) {
+      return []
+    }
+
+    var ary = listToArrayR(head.next)
+
+    return [head.val].concat(ary)
+  }
+
+
+  function prepend(val, head) {
+    return {
+      val: val,
+      next: head
+    }
+  }
+
+  function append(val, head) {
+    var node = {
+      val: val,
+      next: null,
+    }
+    if (head == null) {
+      return node
+    }
+
+    var p = head
+    while (p.next) {
+      p = p.next
+    }
+    p.next = node
+    return head
+  }
+
+
+  function nth(list, n) {
+    if (list == null || n < 0) {
+      return undefined
+    }
+    var p = list
+    var c = 0
+
+    while (p && c < n) {
+      c++
+      p = p.next
+    }
+
+    if (p) {
+      return p.val
+    } else {
+      return undefined
+    }
+  }
+
+  function nth2(list, n) {
+    if (list == null || n < 0) {
+      return undefined
+    }
+    if (n == 0) {
+      return list.val
+    }
+    return nth(list.next, n - 1)
+  }
+
+  function insert(list, n, val) {
+    var node = new ListNode(val)
+
+    if (n == 0) {
+      node.next = list
+      return node
+    }
+
+    var p = list
+    var c = 0
+
+    while (p && c < n - 1) {
+      c++
+      p = p.next
+    }
+
+    // var q = p.next
+    // p.next = node
+    // node.next = q
+
+    node.next = p.next
+    p.next = node
+
+    return list
+  }
+
+  function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+  }
+
+</script>

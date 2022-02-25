@@ -1,0 +1,48 @@
+做为所有对象最终原型的对象，被挂在了Object.prototype上
+
+Object.getPrototypeOf(obj) 获取obj对象的原型对象
+	obj.__proto__
+Object.setPrototypeOf(obj, target) 设置obj对象的原型为target对象
+	obj.__proto__ = target
+
+所有的数值以数值类型的构造函数（Number）的原型属性（Number.prototype）为原型
+所有的字符串以字符串类型的构造函数（String）的原型属性（String.prototype）为原型
+所有的布尔以布尔类型的构造函数（Boolean）的原型属性（Boolean.prototype）为原型
+所有的对象以对象类型的构造函数（Object）的原型属性（Object.prototype）为原型
+所有的数组以数组类型的构造函数（Array）的原型属性（Array.prototype）为原型
+所有的函数以函数类型的构造函数（Function）的原型属性（Function.prototype）为原型
+
+构造函数的prototype属性是做为其构造出来的实例对象的原型，而不是它自己的原型
+
+
+对象的含义：
+	js语言：所有能读出属性的东西都可以称为对象、
+			同时js语言里的对象也可以用来表示映射信息
+	其它语言（c/c++/java）：对象一般指将表达一个复杂事物的所有信息表示在一起，把用来表示这个整体的值就称做对象
+			在这些语言里，对象是不能像js中那样可以随意、随时增减属性的，所以也就当然不能做为动态映射了
+				对象的属性集合是固定的
+			要想实现动态映射对，则需要自行实现相关的数据结构，这些数据结构一般是哈希表，映射表，字典，关联数组。
+		为什么这些语言里，“对象”不能增减属性？
+			这里说的增减是指运行过程中动态增减。
+			因为在这些语言中，“对象”也是使用固定的内存空间存储的。
+				{name: 'zhangshan', age: 18, height: 175.8}
+函数的this：
+	函数的this可以理解为函数的一个隐藏参数
+	它的值取决于函数的【调用方式】，不取决于函数的定义位置和调用位置。
+		主要分为四种：
+			obj.foo() 当方法调用 this是当次被调用的对象
+			foo()     当函数调用 this是全局作用域对象
+			obj.bar.baz.foo.call/apply()  被call或apply，this是call或apply设定的值
+			new foo() 当构造函数调用   this是一个新的空对象，且以foo.prototype为原型
+	js中不存在函数属于某个对象，因为一个函数可以同时被两个对象的属性指向
+		此时函数与这两个对象间的关系是对等的。
+		通过哪个对象调用这个函数，这个函数里的this就是谁。
+
+原型：
+	任何对象（除了null和undefined）都有原型
+		可以通过Object.getPrototypeOf(obj)来获取obj对象的原型
+		原型也是个对象，继而也有原型
+	当在某个对象上查找属性时，如果对象自身没有这个属性，则会到其原型上查找，以此类推
+	Object.setPrototypeOf(obj,someObj)可以设置obj的原型为someObj
+	Object.create(foo) 创建以foo为原型的空对象
+	所有的函数都有一个prototype属性，当它做为构造函数使用时，创建的对象以该属性为原型

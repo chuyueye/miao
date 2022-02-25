@@ -1,0 +1,303 @@
+<script>
+
+  // sort([1,2,3])
+  // sortBy([1,2,3], )
+  // sortBy([{age:1},{age:2},{age:3}], it => age)
+
+  function intersection(array1, array2) {
+    return intersectionBy(array1, array2)
+  }
+
+  function identity(val) {
+    return val
+  }
+
+  function intersectionBy(array1, array2, predicate = _.identity) {
+    var result = []
+    var set = new Set(  array2.map(predicate)   )
+    for (var i = 0; i < array1.length; i++) {
+      if (set.has(predicate(array1[i]))) {
+        result.push(array1[i])
+      }
+    }
+    return result
+  }
+
+
+  function intersectionWith(array1, array2, comparor) {
+    var result = []
+    for (var i = 0; i < array1.length; i++) {
+      for (var j = 0; j < array2.length; j++) {
+        if (comparor(array1[i], array2[j])) {
+          result.push(array1[i])
+        }
+      }
+    }
+    return result
+  }
+
+
+  // _.filter(users, 'active');
+  // _.filter(users,  _.property('active')    )
+  // _.filter(users,    it => it.active       );
+
+  // _.filter(users, {age: 36, active: true})
+  // _.filter(users,    _.matches({age: 36, active: true})     )
+
+  // _.filter(users, it => it.age == 36 && it.active == true)
+
+  // _.filter(users, ['active', true])
+  // _.filter(users, _.matchesProperty(['active', true]))
+  // _.filter(users, it => it.active == true)
+
+
+  function filter(ary, predicate) {
+    var result = []
+    for (var i = 0; i < ary.length; i++) {
+      if (predicate(ary[i], i)) {
+        result.push(ary[i])
+      }
+    }
+    return result
+  }
+
+
+
+  function transformIteratee(f) {
+    return function(...args) {
+      var last = args.pop()
+      var predicate = iteratee(last)
+      return f(...args, predicate)
+    }
+  }
+
+
+  function findKey(obj, predicate) {
+    predicate = iteratee(predicate)
+
+  }
+
+
+
+  function iteratee(predicate) {
+    if (typeof predicate === 'string') {
+      predicate = property(predicate)
+    }
+    if (Array.isArray(predicate)) {
+      predicate = matchesProperty(...predicate)
+    }
+    if (predicate && typeof predicate === 'object') {
+      predicate = matches(predicate)
+    }
+    return predicate
+  }
+
+
+  function matchesProperty(path, val) {
+    return function(obj) {
+      return isEqual(get(obj, path), val)
+    }
+  }
+
+
+  function matches(target) {
+    return function(obj) {
+      for (var key in target) {
+        if (obj[key] !== target[key]) {
+          return false
+        }
+      }
+      return true
+    }
+  }
+
+  function isMatch(obj =  {a:1,b:2,c: {x:1,y:2}},  src= {b:2,c:{y:2}}  ) {
+    for (var key in src) {
+        if (src[key] && typeof src[key] === 'object') {
+            if (!isMatch(obj[key], src[key])) {
+                return false
+            }
+        } else {
+            if (src[key] !== obj[key]) {
+                return false
+            }
+        }
+    }
+    return true
+  }
+
+  function matches(src) {
+    return bind(isMatch, null, _, src)
+  }
+
+
+  function filter(ary, predicate) {
+    if (typeof predicate === 'string') {
+      var result = []
+      ary.forEach(it => {
+        if (it[predicate]) {
+          result.push(it)
+        }
+      })
+      return it
+    }
+    if (Array.isArray(predicate)) {
+      var result = []
+      ary.forEach(it => {
+        if (it[predicate[0]] == predicate[1]) {
+          result.push(it)
+        }
+      })
+      return it
+
+    }
+    if (typeof predicate === 'object') {
+
+    }
+  }
+  // // The `_.matches` iteratee shorthand.
+  // _.filter(users, { 'age': 36, 'active': true });
+  // _.filter(users, _.matches({ 'age': 36, 'active': true }));
+  // // => objects for ['barney']
+
+  // // The `_.matchesProperty` iteratee shorthand.
+  // _.filter(users, _.matchesProperty(['active', false]));
+  // // => objects for ['fred']
+
+  // // The `_.property` iteratee shorthand.
+  // _.filter(users, _.property('active'))
+  // // => objects for ['barney']
+
+  function get(obj, path) {
+    var names = toPath(path)
+    for (var name of names) {
+        obj = obj[name]
+        if (obj == null) {
+            return obj
+        }
+    }
+    return obj
+  }
+
+  function get(obj, path) {
+      var names = toPath(path)
+      return names.reduce((obj, name) => {
+          return obj ?? obj[name]
+      }, obj)
+  }
+
+  function get(obj, path) {
+    path = toPath(path)
+    if (obj == null) {
+        return obj
+    }
+    if (path.length == 0) {
+        return obj
+    }
+    return get(obj[path[0]], path.slice(1))
+  }
+
+  function toPath(path) {
+    if (typeof path == 'string') {
+      return path.split('[')
+        .flatMap(it => it.split(']'))
+        .flatMap(it => it.split('.'))
+        .filter(it => it)
+    }
+    return path
+  }
+
+  function property(name) {
+    return function(obj) {
+      return get(obj, name)
+    }
+  }
+  function property(name) {
+    return bind(get, null, _, name)
+  }
+
+  var _ = {}
+
+  function bind(func, thisArg, ...fixedArgs) {
+                              // 1, _ , 3, _ ,5
+    return function(...args) {  // 2, 9, 4,6,7
+      var bindedArgs = fixedArgs.slice()
+      var i = 0
+      for (var j = 0; j < bindedArgs.length; j++) {
+        if (bindedArgs[j] === _) {
+          bindedArgs[j] = args[i++]
+        }
+      }
+      bindedArgs.push(...args.slice(i))
+      return func.apply(thisArg, bindedArgs)
+    }
+  }
+
+  function f(a,b,c) {
+    return a + b * c
+  }
+
+  f2 = bind(f, null, 2, _, 3)
+
+  // get('a.b', obj)
+
+  // getAdotB = get.绑定第二个参数为('a.b')
+
+
+  function ary(func, n = func.length) {
+      return function(...args) {
+          return func.call(this, ...args.slice(0, n))
+      }
+  }
+
+  function unary(func) {
+    return function(...args) {
+      return func(...args.slice(0, 1))
+    }
+  }
+  function unary(func) {
+    return ary(func, 1)
+  }
+
+  function spread(f) {
+    // return function(ary) {
+    //   return f.apply(null, ary)
+    // }
+
+    return f.apply.bind(f, null)
+  }
+
+
+  function before(n, func) {
+    var c = 0
+    var result
+    return function(...args) {
+        if (c < n) {
+            result = func(...args)
+            c++
+        }
+        return result
+    }
+  }
+
+  function memoize(func, resolver = it => it) {
+    var map = new memoize.Cache()
+
+    function memoized(...args) {
+        var key = resolver(...args)
+
+        if (map.has(key)) {
+            return map.get(key)
+        }
+        var result = func(...args)
+        map.set(key, result)
+        return result
+    }
+
+    memoized.cache = map
+
+    return memoized
+  }
+  memoize.Cache = Map
+
+</script>

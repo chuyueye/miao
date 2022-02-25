@@ -1,0 +1,48 @@
+<script>
+  // var a = 30
+  // var b = -5
+  // var c = -100
+  // var d = 2
+  // var e = 8
+  // var f = 8
+
+  // var y = (c * d - a * f) / (d * b - a * e)
+  // var x = (c * e - f * b) / (a * e - b * d)
+
+  // console.log(x, y)
+
+
+
+
+
+
+
+
+
+
+
+
+  var a = parseInt(prompt('a:'))
+  var b = parseInt(prompt('b:'))
+  var c = parseInt(prompt('c:'))
+
+  var delta = b * b - 4 * a * c
+
+  if (delta < 0) {
+    console.log('无解')
+  } else if (delta == 0) {
+    var x = (-b) / (2 * a)
+    console.log('x1=x2=' + x)
+  } else {
+    var sqrtDelta = Math.sqrt(delta)
+
+    var x1 = (-b + sqrtDelta) / (2 * a)
+    var x2 = (-b - sqrtDelta) / (2 * a)
+
+    console.log('x1=' + x1)
+    console.log('x2=' + x2)
+  }
+
+  console.log('解答完毕')
+
+</script>
