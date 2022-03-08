@@ -17,3 +17,7 @@ document.onclick = function (event) {
 
 // 0303
 
+// 0308
+desc = ' '
+location.search = '?q=foo'
+// 
