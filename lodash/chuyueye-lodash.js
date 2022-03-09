@@ -27,16 +27,25 @@ let chuyueye = function () {
     }
     //Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
     let compact = (array) => {
-        let localarray = array; //for pure function
+        let localArray = array; //for pure function
         let out = []; //initial the OUTPUT
-        for (let entry of localarray) {
+        for (let entry of localArray) {
             if (entry == 0 || entry == null || Number.isNaN(entry)) { }
             else (out.push(entry))
         }
         return out
     }
     let difference = (array, values) => {
-
+        let localArray = array; //for pure function
+        // let out = [];
+        for (let entry of values) {
+            while (true) {
+                let index = localArray.indexOf(entry)
+                if (index == -1) { break }
+                else { localArray.splice(index, 1) }
+            }
+        }
+        return localArray
     }
 
     return {
