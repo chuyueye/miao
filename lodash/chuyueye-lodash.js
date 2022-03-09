@@ -19,7 +19,7 @@ let chuyueye = function () {
         if (length <= size) {
             return [array]
         }
-        repeat(length - size,
+        repeat((length - size),
             () => out2.push(out1.pop())
         )
         return [out1,out2]
