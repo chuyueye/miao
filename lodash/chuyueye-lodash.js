@@ -5,7 +5,7 @@
  */
 
 let chuyueye = function () {
-    // how to iretate or call others.
+    // how to iterate or call others.(iteration)
     // do(repeat) something n times.
     let repeat = (n, action) => {
         for (let i = 0; i < n; i++) {
@@ -47,12 +47,16 @@ let chuyueye = function () {
         }
         return localArray
     }
+    let differenceBy = ()=>{
+
+    }
 
     return {
         repeat: repeat,
         chunk: chunk,
         compact: compact,
         difference: difference,
+        differenceBy:differenceBy,
     }
 }()
 
