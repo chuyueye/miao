@@ -230,28 +230,15 @@
      * @param {number} target
      * @return {number[]}
      */
+
     var twoSum = function (nums, target) {
-        while (true) {
-            let c = target - nums[0];
-            nums.pop();
-            if (nums.includes(c)) {
-                return [nums.indexOf(entry), nums.indexOf(c)]
-            }
-        }
-
-    };
-
-    function twoSum(nums, target) {
-        let vals = {};
-
         for (let i = 0; i < nums.length; i++) {
-            if (target - nums[i] in vals) {
-                return [vals[target - nums[i]], i];
-            } else {
-                vals[nums[i]] = i;
+            for (let j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] === target) {
+                    return [i, j]
+                }
             }
         }
-        return [];
     };
 
     twoSum([2, 7, 11, 15], 9)
