@@ -2,6 +2,6 @@
 
 int main()
 {
-    float pi = 3.14159
-    printf("%.0f",pi)
+    float pi = 3.14159;
+    printf("%.0f",pi);
 }

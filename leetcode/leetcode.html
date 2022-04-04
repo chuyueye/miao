@@ -266,8 +266,38 @@
     };
 </script>
 
-<script id="">
-
+<script id="15. 3Sum">
+    /**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+    var threeSum = function (nums) {
+        nums.sort();
+        let out = [];
+        if (nums.length < 3) {
+            return out
+        }
+        for (let i = 0; i + 2 < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                continue;
+            }
+            let j = i + 1, k = nums.length - 1;
+            while (j + 2 < k) {
+                if ((nums[i] + nums[j] + nums[k]) === 0) {
+                    out.push([nums[i], nums[j], nums[k]])
+                }
+                j++;
+                k--;
+            }
+            if (j + 2 == k) {
+                j++;
+                if (nums[i] + nums[j] + nums[k] === 0) {
+                    out.push([nums[i], nums[j], nums[k]])
+                }
+            }
+        }
+        return out
+    };
 </script>
 
 <script id="">
