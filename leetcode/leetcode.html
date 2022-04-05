@@ -272,31 +272,31 @@
  * @return {number[][]}
  */
     var threeSum = function (nums) {
-        nums.sort();
+        nums.sort((a, b) => a - b);
         let out = [];
+        let lens = nums.length;
         if (nums.length < 3) {
             return out
         }
-        for (let i = 0; i + 2 < nums.length; i++) {
+        for (let i = 0; i + 2 < lens; i++) {
             if (nums[i] == nums[i - 1]) {
                 continue;
             }
-            let j = i + 1, k = nums.length - 1;
-            while (j + 2 < k) {
-                if ((nums[i] + nums[j] + nums[k]) === 0) {
-                    out.push([nums[i], nums[j], nums[k]])
-                }
-                j++;
-                k--;
+            if (nums[i] > 0) {
+                break;
             }
-            if (j + 2 == k) {
-                j++;
+            let j = i + 1, k = nums.length - 1;
+            while (j < k) {
                 if (nums[i] + nums[j] + nums[k] === 0) {
                     out.push([nums[i], nums[j], nums[k]])
-                }
-            } else {
-                if (nums[i] + nums[j] + nums[k] === 0) {
-                    out.push([nums[i], nums[j], nums[k]])
+                    while (nums[i] == nums[i + 1]) { i++ };
+                    while (nums[k] == nums[k - 1]) { k-- };
+                    j++;
+                    k--;
+                } else if (nums[i] + nums[j] + nums[k] < 0) {
+                    j++
+                } else if (nums[i] + nums[j] + nums[k] > 0) {
+                    k--
                 }
             }
         }
