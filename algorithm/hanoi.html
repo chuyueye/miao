@@ -1,0 +1,13 @@
+<body>
+    
+</body>
+<script>
+    function hanoi(n) {
+        if (n < 1 || !Number.isInteger(n)) {
+            console.log('error')
+            return undefined
+        }
+        if (n == 1) return 1
+        return 2 * hanoi(n - 1) + 1
+    }
+</script>
