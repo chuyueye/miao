@@ -36,7 +36,7 @@ javascript: (function () {
     with (document.wrappedJSObject || document) { onmouseup = null; onmousedown = null; oncontextmenu = null } var arAllElements = document.getElementsByTagName('*');
     for (var i = arAllElements.length - 1; i >= 0; i--) {
         var elmOne = arAllElements; with (elmOne.wrappedJSObject || elmOne) { onmouseup = null; onmousedown = null }
-    } alert(unescape('%u5DF2%u4E3A%u4F60%u89E3%u9669%u7F51%u9875%u53F3%u952E%u9650%u5236')); bd.style.webkitUserSelect = 'auto!important'; 
+    } alert(unescape('%u5DF2%u4E3A%u4F60%u89E3%u9669%u7F51%u9875%u53F3%u952E%u9650%u5236')); bd.style.webkitUserSelect = 'auto!important';
     bd.style.MozUserSelect = 'text!important';
 })()
 
