@@ -230,43 +230,96 @@
      * @param {number} target
      * @return {number[]}
      */
+
     var twoSum = function (nums, target) {
-        while (true) {
-            let c = target - nums[0];
-            nums.pop();
-            if (nums.includes(c)) {
-                return [nums.indexOf(entry), nums.indexOf(c)]
-            }
-        }
-
-    };
-
-    function twoSum(nums, target) {
-        let vals = {};
-
         for (let i = 0; i < nums.length; i++) {
-            if (target - nums[i] in vals) {
-                return [vals[target - nums[i]], i];
-            } else {
-                vals[nums[i]] = i;
+            for (let j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] === target) {
+                    return [i, j]
+                }
             }
         }
-        return [];
     };
 
     twoSum([2, 7, 11, 15], 9)
 </script>
 
-<script id="">
-
+<script id="100. Same Tree">
+    /**
+     * Definition for a binary tree node.
+     * function TreeNode(val, left, right) {
+     *     this.val = (val===undefined ? 0 : val)
+     *     this.left = (left===undefined ? null : left)
+     *     this.right = (right===undefined ? null : right)
+     * }
+     */
+    /**
+     * @param {TreeNode} p
+     * @param {TreeNode} q
+     * @return {boolean}
+     */
+    var isSameTree = function (p, q) {
+        if (!p && !q) return true
+        if (!p && q || p && !q) return false
+        if (p.val !== q.val) return false
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
+    };
 </script>
 
-<script id="">
-
+<script id="15. 3Sum">
+    /**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+    var threeSum = function (nums) {
+        nums.sort((a, b) => a - b);
+        let out = [];
+        let lens = nums.length;
+        if (nums.length < 3) {
+            return out
+        }
+        for (let i = 0; i + 2 < lens; i++) {
+            if (nums[i] == nums[i - 1]) {
+                continue;
+            }
+            if (nums[i] > 0) {
+                break;
+            }
+            let j = i + 1, k = nums.length - 1;
+            while (j < k) {
+                if (nums[i] + nums[j] + nums[k] === 0) {
+                    out.push([nums[i], nums[j], nums[k]])
+                    while (nums[i] == nums[i + 1]) { i++ };
+                    while (nums[k] == nums[k - 1]) { k-- };
+                    j++;
+                    k--;
+                } else if (nums[i] + nums[j] + nums[k] < 0) {
+                    j++
+                } else if (nums[i] + nums[j] + nums[k] > 0) {
+                    k--
+                }
+            }
+        }
+        return out
+    };
 </script>
 
-<script id="">
-
+<script id="53. Maximum Subarray">
+    // Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+    // A subarray is a contiguous part of an array.
+    //Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+    var maxSubArray = function (nums) {
+        let a = nums[0];
+        let b = nums[0]; //!!!
+        for (let i = 1; i < nums.length; i++) {
+            b = b + nums[i];
+            if (b < 0 || b < nums[i])///现b小于零，前b小于零
+                b = nums[i];//!!!b赋值数组i项
+            if (a < b)
+                a = b;
+        }
+        return a;
+    }
 </script>
 
 <script id="">
