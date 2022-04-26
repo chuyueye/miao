@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    const isPregnant = true;
+    const promise = new Promise((a, b) => {
+        if (isPregnant) {
+            a('haizitadie')
+        } else {
+            b('laogong')
+        }
+    })
+    promise
+        .then(name => {
+            console.log(`nanrenchengweile${name}`);
+        })
+        .catch(name => {
+            console.log(`nanrenchengweile${name}`);
+        })
+        .finally(
+            console.log('nanrenhenvrenzuizhongjiehunle!')
+        )
+
+        // 为什么我的chrome控制台里面jiehunle在上面，
+        // 而蛋老师视频在下面，顺序不一样'av415403936'
+        
+</script>
+
+</html>
