@@ -107,25 +107,25 @@
  * @param {number[]} height
  * @return {number}
  */
-    // Move pointer, single thread
+    // Move two pointers, single thread
     var trap = function (height) {
         let n = height.length
-        if (n === 0 || n == 1 || n == 2) return 0
+        if (n === 0 || n === 1 || n === 2) return 0
         let l = 0
         let r = n - 1
         let max_l = height[l] //height[0],left
         let max_r = height[r] //height[n-1],right
         let output = 0
         while (l < r) {
-            if (max_l < max_r) { //i want max_right bigger first
+            if (max_l < max_r) { //if max_right(last height) bigger
                 output = output + (max_l - height[l])
                 l = l + 1
-                max_l = Math.max(max_l, height[l])
+                max_l = Math.max(max_l, height[l]) //renew
             }
-            else {
+            else { //if max_left(first height) bigger
                 output = output + (max_r - height[r])
                 r = r - 1
-                max_r = Math.max(max_r, height[r])
+                max_r = Math.max(max_r, height[r]) //renew
             }
         }
         return output
