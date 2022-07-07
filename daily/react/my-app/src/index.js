@@ -108,12 +108,12 @@ class Game extends React.Component {
             history: [{
                 squares: Array(9).fill(null),
             }],
+            stepNumber: 0,
             xIsNext: true,
         }
     }
     handleClick(i) {
-        const history = this.state.history;
-        console.log(history.length);
+        const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         // console.log(current);
         const squares = current.squares.slice(); // make copy of slice() from state
@@ -121,17 +121,46 @@ class Game extends React.Component {
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
-        this.setState({
-            history: history.concat([{
-                squares: squares,
-            }]), // with copy,override the original 
-            xIsNext: !this.state.xIsNext,
-        });
+        this.setState(
+            {
+                history: history.concat([{
+                    //Return value The new length property of the object upon which the method was called.
+                    squares: squares,
+                }]), // with copy,override the original 
+                stepNumber: history.length,
+                xIsNext: !this.state.xIsNext,
+            }
+        );   // asynchronous
+        console.log(this.state, this.state.history.length, this.state.history); // for testing
+    }
+    jumpTo(step) {
+        // console.log(history)
+        this.setState(
+            {
+                // history: history.slice(step + 1, history.length - 1),
+                stepNumber: step, // index of array history
+                xIsNext: (step % 2) === 0, // even to use 'X',odd to use 'O'
+            }
+        )
     }
     render() {
         const history = this.state.history;
-        const current = history[history.length - 1];
+        const current = history[this.state.stepNumber];/* history[history.length - 1]; */
         const winner = calculateWinner(current.squares);
+        const moves = history.map(
+            (step, move) => {    // elements,index,array
+                const desc = move ?
+                    'Go to move #' + move :
+                    'Go to game start';
+                return (
+                    <li key={move}>
+                        <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                    </li>
+                );
+            }
+        );
+
+
         let status;
         if (winner) {
             status = 'Winner: ' + winner;
@@ -148,10 +177,10 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <ol>{/* TODO */}</ol>
+                    <ol>{moves}</ol>
                 </div>
                 <div>
-                    <Reload />
+                    {/* <Reload /> */}
                 </div>
             </div>
         );
@@ -179,7 +208,7 @@ function calculateWinner(squares) {
 }
 function Reload() {
     return (
-        <button onClick={() => { window.location.reload() }}>
+        <button onClick={(e) => { console.log(e); window.location.reload() }}>
             "Reload"
         </button>
     )
